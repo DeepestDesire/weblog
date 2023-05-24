@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import { getSortedPostsData } from '../lib/post';
 
-export default function Home() {
+// eslint-disable-next-line react/prop-types
+export default function Home({allPostsData}) {
   return (
     <div className={styles.container} id='Home'>
       <Head>
@@ -47,6 +51,23 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+        </div>
+        <h2 className={styles.title}>Blog</h2>
+        <div className={styles.blogContainer} >
+          <ul >
+            {allPostsData.map(({ id, date, title }) => (
+              <li className={''} key={id}>
+                {title}
+                <br />
+                {id}
+                <br />
+                {date}
+                <br />
+                {id}
+                <Link href={  '/posts/' + id}  >id</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </main>
 
@@ -113,4 +134,13 @@ export default function Home() {
       `}</style>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    }
+  };
 }

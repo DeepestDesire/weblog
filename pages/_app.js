@@ -5,6 +5,4 @@ export default function App({Component, pageProps}) {
   return  <div className={styles.app}>
     <Component {...pageProps}></Component>;
   </div>;
-  
- 
 }

@@ -4,7 +4,7 @@ import styles from './layout.module.css';
 export default function Layout({ children }) {
   return (
     <div className={styles.container}>
-      this is Layour component
+      this is Layout component
       {children}
     </div>
   );
