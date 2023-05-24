@@ -1,22 +1,23 @@
 /* eslint-disable react/prop-types */
 import Head from 'next/head';
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/post';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
-
+import utilsStyles from '../../styles/utils.module.css';
 export default function Post({ postData }) {
-  const { title, id, date ,contentHTML} = postData;
+  const { title,  date ,contentHTML} = postData;
   return (
     <Layout>
       <Head>
         <title>{title}</title>
       </Head>
-      {title}
-      <br />
-      {id}
-      <br />
-      <Date dateString={date} ></Date>
-      <div dangerouslySetInnerHTML={{__html: contentHTML}} />
+      <article>
+        <h1 className={utilsStyles.headingXl}> {title}</h1>
+        <div className={utilsStyles.lightText}>
+          <Date dateString={date} ></Date>
+        </div>
+        <div dangerouslySetInnerHTML={{__html: contentHTML}} />
+      </article>
     </Layout>
   );
 }
