@@ -1,4 +1,7 @@
 {
+  "name": "george-charles-blog",
+  "version": "1.0.0",
+  "description": "blogs",
   "private": true,
   "scripts": {
     "dev": "next dev",
