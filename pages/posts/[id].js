@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import Head from 'next/head';
-import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import Link from 'next/link';
 import Date from '../../components/date';
+import Layout from '../../components/layout';
 import utilsStyles from '../../styles/utils.module.css';
+import { getAllPostIds, getPostData } from '../../lib/posts';
+
 export default function Post({ postData }) {
   const { title,  date ,contentHTML} = postData;
   return (
@@ -18,6 +20,9 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{__html: contentHTML}} />
       </article>
+      <h2>
+        <Link href="/">Back to home</Link>
+      </h2>
     </Layout>
   );
 }
