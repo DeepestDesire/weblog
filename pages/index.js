@@ -18,7 +18,7 @@ export default function Home({allPostsData}) {
 
       <main>
         <h1 className={styles.title}>
-          Read   <Link href="/posts/first-post">First Post</Link>
+          George Charles Weblog
         </h1>
 
         <p className={styles.description}>
