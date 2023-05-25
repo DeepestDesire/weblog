@@ -4,3 +4,12 @@
   margin: 3rem auto 6rem; */
   height: 100vh;
 }
+
+
+.nav {
+  left: 0;
+  margin-left: 80px;
+  width: calc(100% - 80px - 80px);
+  display: flex;
+  flex-direction: row;
+}
