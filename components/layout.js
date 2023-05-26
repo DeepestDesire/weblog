@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import Header from './header';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Head>

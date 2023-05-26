@@ -8,6 +8,7 @@ specifiers:
   eslint: ^8.41.0
   eslint-plugin-react: ^7.32.2
   gray-matter: ^4.0.3
+  husky: ^8.0.3
   next: latest
   react: 18.2.0
   react-dom: 18.2.0
@@ -29,6 +30,7 @@ dependencies:
 devDependencies:
   eslint: 8.41.0
   eslint-plugin-react: 7.32.2_eslint@8.41.0
+  husky: 8.0.3
 
 packages:
 
@@ -1385,6 +1387,12 @@ packages:
   /html-void-elements/2.0.1:
     resolution: {integrity: sha512-0quDb7s97CfemeJAnW9wC0hw78MtW7NU3hqtCD75g2vFlDLt36llsYD7uB7SUzojLMP24N5IatXf7ylGXiGG9A==}
     dev: false
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
