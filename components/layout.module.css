@@ -1,6 +1,6 @@
 .container {
   padding: 0 2rem;
-  margin: 3rem auto 6rem;
+  margin: 1rem auto 6rem;
 }
 
 .header {
@@ -13,7 +13,6 @@
   margin: 3rem 0 0;
 }
 
-
 .logo {
   height: 1em;
 }
@@ -22,12 +21,4 @@
   display: flex;
   justify-content: center;
   margin-top: 5rem;
-}
-
-.nav {
-  left: 0;
-  margin-left: 80px;
-  width: calc(100% - 80px - 80px);
-  display: flex;
-  flex-direction: row;
 }

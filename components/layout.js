@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import Head from 'next/head';
-import HeaderText from './HeaderText';
-import Border from './border';
 import styles from './layout.module.css';
 import Profile from './profile';
 import Header from './header';
@@ -18,7 +16,7 @@ export default function Layout({ children, home }) {
         {/* <meta property="og:image" content={} */}
       </Head>
       <Header></Header>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <Profile> </Profile>
@@ -28,16 +26,7 @@ export default function Layout({ children, home }) {
             <Profile height={108}> </Profile>
           </>
         )}
-      </header>
-      <Border></Border>
-      <div className={styles.nav}>
-        <HeaderText title={'Web Design'}></HeaderText>
-        <HeaderText title={'Promote Your Site'}></HeaderText>
-        <HeaderText title={'Small Business Tips'}></HeaderText>
-        <HeaderText title={'Inspiration'}></HeaderText>
-        <HeaderText title={'Resources'}></HeaderText>
-      </div>
-      <Border></Border>
+      </header> */}
       {children}
       <footer className={styles.footer}>
         <a

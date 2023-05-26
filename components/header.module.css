@@ -1,12 +1,35 @@
-
+.nav {
+  left: 0;
+  margin-left: 80px;
+  width: calc(100% - 80px - 80px);
+  display: flex;
+  flex-direction: row;
+}
 
 .line {
-    border: solid;
-    width: 100%;
-    background-color: blanchedalmond;
-    border-top: 2px solid rgba(0,0,0),1;
-    line-height: 2px;
-    box-sizing: border-box;
-    height: 50px;
+  border: solid;
+  width: 100%;
+  background-color: blanchedalmond;
+  border-top: 2px solid rgba(0, 0, 0), 1;
+  line-height: 2px;
+  box-sizing: border-box;
+  height: 50px;
+}
 
+.borderCircle {
+  border-radius: 9999px;
+}
+
+.headerUp {
+  display: flex;
+  margin: 0 auto 10px 0;
+  width: 100%;
+}
+
+.column {
+  --column-flex: 490;
+  flex: var(--column-flex) 1 0%;
+  left: 80px;
+  position: relative;
+  margin: 0 0 10px 0;
 }
