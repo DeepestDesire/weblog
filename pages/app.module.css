@@ -1,3 +1,12 @@
 .app {
-    background-color: rgba(213, 245, 245, 0.369);
+  background-color: rgba(213, 245, 245, 0.369);
+  font-family: Lato, sans-serif;
 }
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/media/WixMadeforTextVF_W_Wght.8022447a.woff2");
+}
+
