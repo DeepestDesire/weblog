@@ -2,7 +2,7 @@ import styles from './header.module.css';
 import HeaderText from './HeaderText';
 import Border from './border';
 import Image from 'next/image';
-import Button from '@MUI/material/Button';
+import Button from '@mui/material/Button';
 export default function Header() {
   return (
     <div className={styles.navContainer}>
