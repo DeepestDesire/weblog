@@ -25,6 +25,10 @@
   "devDependencies": {
     "eslint": "^8.41.0",
     "eslint-plugin-react": "^7.32.2",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --fix"
   }
 }
