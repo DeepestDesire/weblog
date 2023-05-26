@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import Head from 'next/head';
 import styles from './layout.module.css';
-import Profile from './profile';
 import Header from './header';
 
 export default function Layout({ children, home }) {

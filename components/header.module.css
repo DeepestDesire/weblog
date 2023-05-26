@@ -18,6 +18,8 @@
 
 .borderCircle {
   border-radius: 9999px;
+  left: 80px;
+  position: relative;
 }
 
 .headerUp {
@@ -29,7 +31,16 @@
 .column {
   --column-flex: 490;
   flex: var(--column-flex) 1 0%;
-  left: 80px;
   position: relative;
   margin: 0 0 10px 0;
+}
+
+.buttonLocation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  position: relative;
+  right: 80px;
 }

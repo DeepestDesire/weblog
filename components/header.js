@@ -2,7 +2,7 @@ import styles from './header.module.css';
 import HeaderText from './HeaderText';
 import Border from './border';
 import Image from 'next/image';
-
+import Button from '@MUI/material/Button';
 export default function Header() {
   return (
     <div className={styles.navContainer}>
@@ -17,7 +17,23 @@ export default function Header() {
             fill={false}
           />
         </div>
-        <div className={styles.column}>daiyao</div>
+        <div className={styles.column}>
+          <div className={styles.buttonLocation}>
+            <Button
+              disabled={false}
+              size="large"
+              color="secondary"
+              variant="outlined"
+              style={{
+                color: 'black',
+                borderColor: 'black',
+                borderRadius: '20px',
+              }}
+            >
+              Subscribe
+            </Button>
+          </div>
+        </div>
       </div>
       <Border></Border>
       <div className={styles.nav}>
