@@ -4,6 +4,7 @@ import HeaderText from './HeaderText';
 import Border from './border';
 import styles from './layout.module.css';
 import Profile from './profile';
+import Header from './header';
 
 export default function Layout({ children, home }) {
   return (
@@ -16,6 +17,7 @@ export default function Layout({ children, home }) {
         />
         {/* <meta property="og:image" content={} */}
       </Head>
+      <Header></Header>
       <header className={styles.header}>
         {home ? (
           <>
