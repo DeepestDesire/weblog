@@ -3,7 +3,7 @@ import Image from 'next/image';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-let name = 'george charles';
+let name = '戴遥  { George Charles }';
 export default function Profile({ height }) {
   return (
     <Link href="/" className={utilStyles.profile}>

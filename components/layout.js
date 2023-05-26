@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import styles from './layout.module.css';
 import Profile from './profile';
-
+import Header from './header';
 
 export default function Layout({ children, home }) {
   return (
@@ -12,6 +12,7 @@ export default function Layout({ children, home }) {
         <meta name="description" content="Learn how to build a personal website using Next.js" />
         {/* <meta property="og:image" content={} */}
       </Head>
+      <Header></Header>
       <header className={styles.header}>
         {home? (<>
           <Profile > </Profile>
