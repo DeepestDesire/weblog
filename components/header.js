@@ -37,8 +37,8 @@ export default function Header() {
       </div>
       <Border></Border>
       <div className={styles.nav}>
-        <HeaderText title={'Web Design'}></HeaderText>
-        <HeaderText title={'Promote Your Site'}></HeaderText>
+        <HeaderText title={'Home Page'} path={'/'}></HeaderText>
+        <HeaderText title={'Blogs'} path={'/posts/Nodejs-Eggjs'}></HeaderText>
         <HeaderText title={'Small Business Tips'}></HeaderText>
         <HeaderText title={'Inspiration'}></HeaderText>
         <HeaderText title={'Resources'}></HeaderText>

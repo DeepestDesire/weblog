@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
+import Link from 'next/link';
 import styles from './index.module.css';
-
-export default function HeaderText({ title }) {
+export default function HeaderText({ title, path }) {
   return (
-    <div className={styles.container}>
-      <p className={styles.text}>{title}</p>
-    </div>
+    <Link href={path ?? '/'}>
+      <div className={styles.container}>
+        <p className={styles.text}>{title}</p>
+      </div>
+    </Link>
   );
 }
