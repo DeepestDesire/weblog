@@ -19,9 +19,7 @@ export default function Home({ allPostsData }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <section
-            className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
-          >
+          <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
             <h2 className={utilStyles.headingLg}>Blog</h2>
             <div className={styles.blogContainer}>
               <ul>
@@ -48,6 +46,6 @@ export async function getStaticProps() {
   return {
     props: {
       allPostsData,
-    }
+    },
   };
 }
