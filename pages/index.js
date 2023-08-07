@@ -13,29 +13,32 @@ import utilStyles from '../styles/utils.module.css';
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
-      <div className={styles.container} id="Home">
+      <div id="Home" className={styles.container}>
         <Head>
-          <title>Next App Home</title>
+          <title>George Charles WebLog</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main>
-          <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-            <h2 className={utilStyles.headingLg}>Blog</h2>
-            <div className={styles.blogContainer}>
-              <ul>
-                {allPostsData.map(({ id, date, title }) => (
-                  <li className={utilStyles.listItem} key={id}>
-                    <Link href={`/posts/${id}`}>{title}</Link>
-                    <br />
-                    <small className={utilStyles.lightText}>
-                      <Date dateString={date} />
-                    </small>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        </main>
+        <div className={styles.mainContainer}>
+          <main className={styles.main}>
+            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+              <h2 className={utilStyles.headingLg}>Blog</h2>
+              <div style={{ borderBottom: '1px solid transparent', lineHeight: 0.01 }}></div>
+              <div className={styles.blogContainer}>
+                <ul>
+                  {allPostsData.map(({ id, date, title }) => (
+                    <li className={utilStyles.listItem} key={id}>
+                      <Link href={`/posts/${id}`}>{title}</Link>
+                      <br />
+                      <small className={utilStyles.lightText}>
+                        <Date dateString={date} />
+                      </small>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          </main>
+        </div>
       </div>
     </Layout>
   );

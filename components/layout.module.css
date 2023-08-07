@@ -1,5 +1,16 @@
 .container {
   margin: 1rem auto 6rem;
+  max-width: 1440px;
+  width: 90%;
+}
+
+.mainContainer {
+  display: flex;
+  flex: 1;
+}
+
+.container main {
+  background-color: red;
 }
 
 .header {
