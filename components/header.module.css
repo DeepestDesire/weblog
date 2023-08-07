@@ -1,9 +1,28 @@
+.navContainer {
+  /* display: flex;
+  flex-direction: row; */
+}
+
 .nav {
-  left: 0;
-  margin-left: 80px;
-  width: calc(100% - 80px - 80px);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+}
+
+.topNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 4rem;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .line {
@@ -18,21 +37,11 @@
 
 .borderCircle {
   border-radius: 9999px;
-  left: 80px;
-  position: relative;
-}
-
-.headerUp {
-  display: flex;
-  margin: 0 auto 10px 0;
-  width: 100%;
 }
 
 .column {
-  --column-flex: 490;
-  flex: var(--column-flex) 1 0%;
+  flex: 1;
   position: relative;
-  margin: 0 0 10px 0;
 }
 
 .buttonLocation {
@@ -42,5 +51,4 @@
   justify-content: end;
   height: 100%;
   position: relative;
-  right: 80px;
 }
