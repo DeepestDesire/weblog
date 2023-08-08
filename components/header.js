@@ -10,7 +10,7 @@ export default function Header() {
         <div className={styles.logo}>
           <Image
             className={styles.borderCircle}
-            src="/profile.jfif"
+            src="/profile.png"
             height={50} // Desired size with correct aspect ratio
             width={50} // Desired size with correct aspect ratio
             alt="George"
@@ -21,12 +21,11 @@ export default function Header() {
           Subscribe
         </Button>
       </div>
-      <div className={styles.nav}>
-        <HeaderText title={'Home Page'} path={'/'}></HeaderText>
-        <HeaderText title={'Blogs'} path={'/posts/Nodejs-Eggjs'}></HeaderText>
-        <HeaderText title={'Small Business Tips'}></HeaderText>
-        <HeaderText title={'Inspiration'}></HeaderText>
-        <HeaderText title={'1'}></HeaderText>
+      <div className="flex border-y" style={{ backgroundColor: 'rgb(249, 249, 251)' }}>
+        <HeaderText title={'个人'} path={'/'}></HeaderText>
+        <HeaderText title={'博客'} path={'/posts/Nodejs-Eggjs'}></HeaderText>
+        <HeaderText title={'时光'}></HeaderText>
+        <HeaderText title={'感受'}></HeaderText>
       </div>
     </div>
   );

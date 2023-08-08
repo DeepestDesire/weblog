@@ -1,7 +1,6 @@
 .container {
-  /* margin: 0rem auto 0rem; */
+  margin: 0rem auto;
   max-width: 1440px;
-  /* width: 90%; */
 }
 
 .mainContainer {
@@ -10,6 +9,7 @@
 }
 
 .container main {
+  padding: 0rem 1rem;
 }
 
 .header {
