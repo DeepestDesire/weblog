@@ -1,9 +1,8 @@
 ---
-title: "eggjs 相关知识汇总"
-date: "2023-05-24"
+title: 'eggjs 相关知识汇总'
+date: '2023-05-24'
+content: See the latest updates to the MDN reference pages about JavaScript regular expressions, including new sections on sub-features and browser compatibility information.
 ---
-
-# Nodejs egg
 
 1. 如何在 eggjs 中正确设置跨域
 

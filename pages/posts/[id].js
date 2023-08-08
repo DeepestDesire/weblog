@@ -3,8 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
-import styles from './id.module.css';
-import utilsStyles from '../../styles/utils.module.css';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export default function Post({ postData }) {
@@ -14,10 +12,10 @@ export default function Post({ postData }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <section className={styles.section}>
+      <section className="mx-4 max-w-full overflow-hidden">
         <article>
-          <h1 className={utilsStyles.headingXl}> {title}</h1>
-          <div className={utilsStyles.lightText}>
+          <h1 className="text-2xl font-semibold mt-4 mb-8">{title}</h1>
+          <div>
             <Date dateString={date}></Date>
           </div>
           <div dangerouslySetInnerHTML={{ __html: contentHTML }} />

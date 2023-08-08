@@ -1,44 +1,29 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import Head from 'next/head';
-import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
-import Date from '../components/date';
 import Layout from '../components/layout';
-
-import styles from '../styles/Home.module.css';
-import utilStyles from '../styles/utils.module.css';
+import ArticleItem from './articleItem';
 
 // eslint-disable-next-line react/prop-types
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
-      <div id="Home" className={styles.container}>
+      <div id="Home">
         <Head>
           <title>George Charles WebLog</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className={styles.mainContainer}>
-          <main className={styles.main}>
-            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-              <h2 className={utilStyles.headingLg}>Blog</h2>
-              <div style={{ borderBottom: '1px solid transparent', lineHeight: 0.01 }}></div>
-              <div className={styles.blogContainer}>
-                <ul>
-                  {allPostsData.map(({ id, date, title }) => (
-                    <li className={utilStyles.listItem} key={id}>
-                      <Link href={`/posts/${id}`}>{title}</Link>
-                      <br />
-                      <small className={utilStyles.lightText}>
-                        <Date dateString={date} />
-                      </small>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          </main>
-        </div>
+        <main>
+          <section className="mt-4">
+            <h2 className="font-base mb-2">Featured Articles</h2>
+            <div className="grid gap-4 grid-rows-3">
+              {allPostsData.map((props) => (
+                <ArticleItem key={props.id} {...props} />
+              ))}
+            </div>
+          </section>
+        </main>
       </div>
     </Layout>
   );

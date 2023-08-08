@@ -20,26 +20,14 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        {/* <meta property="og:image" content={} */}
       </Head>
       <Header></Header>
-      {/* <header className={styles.header}>
-        {home ? (
-          <>
-            <Profile> </Profile>
-          </>
-        ) : (
-          <>
-            <Profile height={108}> </Profile>
-          </>
-        )}
-      </header> */}
       {children}
-      <footer className={styles.footer}>
+      <footer className="flex justify-center mb-2 pt-2 border-solid border-y border-b-0">
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
           Powered by
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />

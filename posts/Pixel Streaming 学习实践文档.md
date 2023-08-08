@@ -1,6 +1,7 @@
 ---
-title: 'Pixel Streaming 学习实践文档'
+title: 'Unreal Engine：学习 Pixel Streaming， 实践功能开发全记录'
 date: '2023-08-21'
+content: 通过简单的入门教程，在 Unreal Engine 中开启器视频流推送服务。包括 UE 的插件设置，和中继服务器的搭建。完整的呈现视频流推送服务的搭建。
 ---
 
 Author: George
