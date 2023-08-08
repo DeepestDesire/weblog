@@ -1,4 +1,10 @@
+import propTypes from 'prop-types';
+import { useEffect } from 'react';
 export default function ArticleItem({ id, title, content }) {
+  useEffect(() => {
+    console.log('title', title);
+  }, []);
+
   return (
     <div className="flex flex-col border rounded-lg  p-2" style={{ borderColor: 'rgb(205 205 205)' }}>
       <h3
@@ -17,7 +23,7 @@ export default function ArticleItem({ id, title, content }) {
   );
 }
 ArticleItem.propTypes = {
-  id: Number,
-  title: String,
-  content: String,
+  id: propTypes.string,
+  title: propTypes.string,
+  content: propTypes.string,
 };

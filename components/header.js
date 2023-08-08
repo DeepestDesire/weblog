@@ -1,15 +1,14 @@
-import styles from './header.module.css';
 import HeaderText from './HeaderText';
 import Image from 'next/image';
 import Button from '@mui/material/Button';
 
 export default function Header() {
   return (
-    <div className={styles.navContainer}>
-      <div className={styles.topNavigation}>
-        <div className={styles.logo}>
+    <div>
+      <div className="flex justify-between px-4 h-16 items-center">
+        <div className="flex items-center gap-2">
           <Image
-            className={styles.borderCircle}
+            className="rounded-full"
             src="/profile.png"
             height={50} // Desired size with correct aspect ratio
             width={50} // Desired size with correct aspect ratio
