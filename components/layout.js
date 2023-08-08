@@ -3,13 +3,13 @@ import Head from 'next/head';
 import styles from './layout.module.css';
 import Header from './header';
 
-export const metadata = {
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
-};
+// export const metadata = {
+//   viewport: {
+//     width: 'device-width',
+//     initialScale: 1,
+//     maximumScale: 1,
+//   },
+// };
 
 export default function Layout({ children }) {
   return (
