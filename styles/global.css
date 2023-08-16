@@ -1,5 +1,6 @@
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
@@ -36,6 +37,13 @@ button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+
+#__next {
+  height: 100%;
+  overflow: hidden;
+  display: flex ;
+}
+
 
 @tailwind base;
 @tailwind components;

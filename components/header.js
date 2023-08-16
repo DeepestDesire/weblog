@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Button from '@mui/material/Button';
 
 export default function Header() {
+
+  
   return (
     <div>
       <div className="flex justify-between px-4 h-16 items-center">
@@ -22,7 +24,7 @@ export default function Header() {
       </div>
       <div className="flex border-y" style={{ backgroundColor: 'rgb(249, 249, 251)' }}>
         <HeaderText title={'个人'} path={'/'}></HeaderText>
-        <HeaderText title={'博客'} path={'/posts/Nodejs-Eggjs'}></HeaderText>
+        <HeaderText title={'Canvas Editor'} path={'/canvas/editor'}></HeaderText>
         <HeaderText title={'时光'}></HeaderText>
         <HeaderText title={'感受'}></HeaderText>
       </div>
