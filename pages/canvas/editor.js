@@ -1,45 +1,12 @@
-import Konva from 'konva';
 import { useEffect } from 'react';
-import Profile from '../../components/profile';
-
+import Head from 'next/head';
+import Container from './components/container';
 export default function Page() {
-  useEffect(() => {
-    // first we need to create a stage
-    var stage = new Konva.Stage({
-      container: 'konva', // id of container <div>
-      width: 500,
-      height: 500,
-    });
-
-    // then create layer
-    var layer = new Konva.Layer();
-
-    // create our shape
-    var circle = new Konva.Circle({
-      x: stage.width() / 2,
-      y: stage.height() / 2,
-      radius: 70,
-      fill: 'red',
-      stroke: 'black',
-      strokeWidth: 4,
-    });
-
-    // add the shape to the layer
-    layer.add(circle);
-
-    // add the layer to the stage
-    stage.add(layer);
-
-    // draw the image
-    layer.draw();
-  }, []);
-
+  useEffect(() => {}, []);
   return (
     <>
-      <Profile></Profile>
-      <div id="konva" className="flex flex-1">
-        this is Editor
-      </div>
+      <Head></Head>
+      <Container></Container>
     </>
   );
 }
