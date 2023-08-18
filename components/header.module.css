@@ -1,0 +1,31 @@
+
+.hero {
+  display:  grid;
+  grid-template-rows: 284px;
+
+  background-color: #1b1b1b;
+
+  border-top-color:rgb(133, 133, 133);
+  border-top-style: solid;
+  border-top-width: 0.66666px;
+  
+}
+
+
+.hero section {
+  padding: 0 1rem;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+
+.hero p {
+  font-size: 1rem;
+  color: #fff;
+}
