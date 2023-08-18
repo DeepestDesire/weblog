@@ -12,26 +12,25 @@ content: See the latest updates to the MDN reference pages about JavaScript regu
 cors:{
     enable: true,
     package: 'egg-cors',
-
-			//允许跨域的网址，*表示所有网址都可以跨域请求文件资源，也可以指定域名
-      origin: '*',
-        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+    //允许跨域的网址，*表示所有网址都可以跨域请求文件资源，也可以指定域名
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
 }
 
 //默认origin只支持一个域名或者*表示全部，如果想支持具体的多个指定域名可以如下设置：
-    config.cors = {
-        // origin: ['http://localhost'],
-        origin:function(ctx) { //设置允许来自指定域名请求
-            console.log(ctx);
-            const whiteList = ['http://www.baidu.com','http://www.hqyj.com'];
-            let url = ctx.request.header.origin;
-            if(whiteList.includes(url)){
-                return url;
-            }
-            return 'http://localhost' //默认允许本地请求可跨域
-        },
-        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
-    };
+config.cors = {
+  // origin: ['http://localhost'],
+  origin:function(ctx) { //设置允许来自指定域名请求
+      console.log(ctx);
+      const whiteList = ['http://www.baidu.com','http://www.hqyj.com'];
+      let url = ctx.request.header.origin;
+      if(whiteList.includes(url)){
+          return url;
+      }
+      return 'http://localhost' //默认允许本地请求可跨域
+  },
+  allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+};
 
 ```
 
