@@ -1,0 +1,20 @@
+
+
+SequenceDiagram {
+ lifeline l0 as "stage"
+ lifeline l1 as " mouse "
+ lifeline l2 as " dot entity "
+ lifeline l3 as " Line Manager "
+ lifeline l4 as " line "
+ l1 --> l2 "mouse over"
+ l1 -s-> l2 "mouse down"
+ l2 -s-> l3 "start create line"
+ l3 -a-> l4 "create line"
+ l4 -r-> l3 "line"
+ l1 -s-> l3 "mouse move"
+ l3 -s-> l4 "update line"
+ l1 -s-> l3 "mouse up"
+ l3 -s-> l4 "end update line"
+ l3 -r-> l3 "end point is dot entity?"
+ 
+}

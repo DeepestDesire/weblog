@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import Head from 'next/head';
+import Profile from '../../components/profile';
+
 import Container from './components/container';
 export default function Page() {
   useEffect(() => {}, []);
   return (
     <>
-      <Head></Head>
+      <Profile></Profile>
       <Container></Container>
     </>
   );
