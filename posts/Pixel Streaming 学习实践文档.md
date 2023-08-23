@@ -1,5 +1,5 @@
 ---
-title: 'Unreal Engine：学习 Pixel Streaming， 实践功能开发全记录'
+title: 'Unreal Engine:学习 Pixel Streaming,实践功能开发全记录'
 date: '2023-08-21'
 content: 通过简单的入门教程，在 Unreal Engine 中开启器视频流推送服务。包括 UE 的插件设置，和中继服务器的搭建。完整的呈现视频流推送服务的搭建。
 ---
@@ -84,5 +84,3 @@ Signalling And Web Server 信号和网络服务器
 启动单独的 WebServer，视频流，交互信息传递主要通过 WebRTC 协议
 
 C:\Program Files\Epic Games\UE_5.2\Engine\Plugins\Media\PixelStreaming\Resources\WebServers
-
-1. 前端有两个库

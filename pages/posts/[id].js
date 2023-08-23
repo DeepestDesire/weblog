@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getPostDataFromServer, getAllPostIdsFromServer } from '../../lib/posts';
 
 export default function Post({ postData }) {
   const { title, date, contentHTML } = postData;
@@ -29,7 +29,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const paths = await getAllPostIdsFromServer();
   return {
     paths,
     fallback: false,
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const postData = await getPostDataFromServer(params.id);
   return {
     props: {
       postData,

@@ -5,7 +5,6 @@ import { getSortedPostsData } from '../lib/posts';
 import Layout from '../components/layout';
 import ArticleItem from './articleItem';
 
-// eslint-disable-next-line react/prop-types
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -30,10 +29,12 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = await getSortedPostsData();
+
+  console.log('allPostsData :>> ', allPostsData);
   return {
     props: {
-      allPostsData,
+      allPostsData: allPostsData,
     },
   };
 }

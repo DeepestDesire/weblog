@@ -8,13 +8,13 @@ export default function Header() {
     <>
       <div className="flex justify-between px-4 h-16 items-center bg-black" style={{ backgroundColor: '#1b1b1b' }}>
         <div className="flex items-center gap-2">
-          <Image
+          {/* <Image
             className="rounded-full"
             src="/profile.png"
             height={50} // Desired size with correct aspect ratio
             width={50} // Desired size with correct aspect ratio
             alt="George"
-          />
+          /> */}
           <p className="text-white">George Weblog</p>
         </div>
 
