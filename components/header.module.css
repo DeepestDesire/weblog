@@ -1,3 +1,16 @@
+/*
+** 
+** 粘性定位（Sticky positioning）是一种新的定位方式，它会让元素先保持和 position: static 一样的定位，当它的相对视口位置（offset from the viewport）达到某一个预设值时，它就会像 position: fixed 一样定位。
+**
+*/
+
+.container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 700;
+}
+
 
 .hero {
   display:  grid;
@@ -11,6 +24,26 @@
   
 }
 
+
+/*
+** min-width 至少有35个字体宽度的
+** current >=35rem
+**
+*/
+@media (min-width: 47rem) {
+  .menuButton {
+    display: none;
+  }
+}
+
+/*
+** man-width 最多有37个字体宽度的
+** current <=35rem
+**
+*/
+@media (max-width: 47rem) {
+
+}
 
 .hero section {
   padding: 0 1rem;
