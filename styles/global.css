@@ -45,6 +45,14 @@ button {
 }
 
 
+:root {
+  --max-width: 1440px;
+  --border-primary: #cdcdcd;
+  --type-heading-h5-font-size: 1.2rem;
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

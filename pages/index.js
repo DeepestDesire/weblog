@@ -3,8 +3,8 @@
 import Head from 'next/head';
 import { getSortedPostsData } from '../lib/posts';
 import Layout from '../components/layout';
-import ArticleItem from './articleItem';
-
+import styles from './index.module.css';
+import FeaturedArticles from './featuredArticles/featuredArticles';
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -13,13 +13,20 @@ export default function Home({ allPostsData }) {
           <title>George Charles WebLog</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main>
+        <main className={styles.container}>
+          <div className={styles.heroContainer}>
+            <div className={styles.hero}>
+              <section className={styles.section}>
+                <h1>
+                  Resources for <u>Developers</u>, by Developers{' '}
+                </h1>
+                <p>Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.</p>
+              </section>
+            </div>
+          </div>
           <section className="mt-4">
-            <h2 className="font-base mb-2">Featured Articles</h2>
-            <div className="grid gap-4 grid-rows-3">
-              {allPostsData.map((props) => (
-                <ArticleItem key={props.id} {...props} />
-              ))}
+            <div className={styles.content}>
+              <FeaturedArticles allPostsData={allPostsData}></FeaturedArticles>
             </div>
           </section>
         </main>
@@ -30,11 +37,10 @@ export default function Home({ allPostsData }) {
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData();
-
-  console.log('allPostsData :>> ', allPostsData);
   return {
     props: {
       allPostsData: allPostsData,
     },
   };
 }
+

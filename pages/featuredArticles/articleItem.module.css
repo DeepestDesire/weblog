@@ -1,0 +1,26 @@
+
+
+.card {
+  border: 1px solid var(--border-primary);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.card h3 {
+  align-items: flex-end;
+  display: flex;
+  flex-grow: 1;
+  font: var(--type-heading-h5);
+  font-weight: 500;
+  line-height: var(--intermediate-line-height);
+  margin: 0 0 1rem;
+}
+
+.content {
+  font: 1em;
+  line-height: 1.2em;
+  max-height: calc(3em*1.2);
+  overflow: hidden;
+}

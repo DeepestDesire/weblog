@@ -1,0 +1,22 @@
+.sectionContainer {
+  margin: 0rem auto;
+  padding: 0 1rem;
+}
+
+
+.tileContainer {
+  grid-gap: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: row;
+  max-width: 52rem;
+  overflow: hidden;
+}
+
+
+@media screen and (min-width: 769px) {
+  .tileContainer {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}

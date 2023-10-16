@@ -21,7 +21,11 @@ export default function Layout({ children }) {
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
-      <Header></Header>
+      <div className={styles.stickyHeader}>
+        <div className={styles.topNav}>
+          <Header></Header>
+        </div>
+      </div>
       {children}
       <footer className="flex justify-center mb-2 pt-2 border-solid border-y border-b-0">
         <a
