@@ -1,13 +1,22 @@
 import propTypes from 'prop-types';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useRouter } from 'next/navigation'
+ 
 import styles from './articleItem.module.css';
 export default function ArticleItem({ id, title, content }) {
+  const router = useRouter()
+
   useEffect(() => {
     console.log('title', title);
   }, []);
 
+
+  const click = useCallback(() => {
+    router.push(`/posts/${id}`)
+  }, [id])
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={click}>
       <h3
         className="mb-4  leading-7"
         style={{ fontSize: '1.2rem', lineHeight: '1.7rem', color: '#1b1b1b', maxHeight: '3.4rem', fontWeight: 500 }}
@@ -18,6 +27,8 @@ export default function ArticleItem({ id, title, content }) {
     </div>
   );
 }
+
+
 ArticleItem.propTypes = {
   id: propTypes.string,
   title: propTypes.string,
