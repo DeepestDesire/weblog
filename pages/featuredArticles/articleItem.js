@@ -1,10 +1,10 @@
 import propTypes from 'prop-types';
-import { useCallback, useEffect, useMemo } from 'react';
-import { useRouter } from 'next/navigation'
+import { useCallback, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
  
 import styles from './articleItem.module.css';
 export default function ArticleItem({ id, title, content }) {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     console.log('title', title);
@@ -12,8 +12,8 @@ export default function ArticleItem({ id, title, content }) {
 
 
   const click = useCallback(() => {
-    router.push(`/posts/${id}`)
-  }, [id])
+    router.push(`/posts/${id}`);
+  }, [id]);
 
   return (
     <div className={styles.card} onClick={click}>
