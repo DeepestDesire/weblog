@@ -23,7 +23,7 @@ export default function ArticleItem({ id, title, content }) {
       >
         <a href={`/posts/${id}`}>{title}</a>
       </h3>
-      <p className={styles.content}>{content.length > 100 ? content.slice(0, 200) : content}</p>
+      <p className={styles.content}>{content && content.length > 100 ? content.slice(0, 200) : content}</p>
     </div>
   );
 }
