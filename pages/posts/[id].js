@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import Head from 'next/head';
 import Link from 'next/link';
+import Markdown from 'react-markdown';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
+
 import { getPostDataFromServer, getAllPostIdsFromServer } from '../../lib/posts';
 
 export default function Post({ postData }) {
-  const { title, date, contentHTML } = postData;
+  const { title, date, content } = postData;
   return (
     <Layout>
       <Head>
@@ -18,7 +20,9 @@ export default function Post({ postData }) {
           <div>
             <Date dateString={date}></Date>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: contentHTML }} />
+          <Markdown>
+            {content}
+          </Markdown>
         </article>
         <h2>
           <Link href="/">Back to home</Link>

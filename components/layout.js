@@ -18,8 +18,7 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon" />
         <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
       </Head>
       <div className={styles.stickyHeader}>
         <div className={styles.topNav}>
