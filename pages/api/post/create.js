@@ -1,21 +1,6 @@
-
-import prisma from '../../../lib/prisma';
+import { addPost } from '../../../lib/posts';
 
 export default async function handler(request, response) {
-  const id = request.body;
-
-
-
-
-
-  // const newUser = await prisma.user.create({
-  //   data: {
-  //     name: 'Elliott',
-  //     email: 'xelliottx@example-user.com',
-  //   },
-  // });
- 
-  // const users = await prisma.user.findMany();
-
-  return response.status(200).json({ post:102 });
+  console.log('object :>> ', typeof request.body); 
+  return addPost(request.body);
 }
