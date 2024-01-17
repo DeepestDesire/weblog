@@ -1,8 +1,8 @@
-import propTypes from 'prop-types';
-import { useCallback, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
- 
 import styles from './articleItem.module.css';
+import propTypes from 'prop-types';
+import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function ArticleItem({ id, title, content }) {
   const router = useRouter();
 
@@ -22,7 +22,6 @@ export default function ArticleItem({ id, title, content }) {
     </div>
   );
 }
-
 
 ArticleItem.propTypes = {
   id: propTypes.string,
