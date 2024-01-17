@@ -2,21 +2,28 @@
 import Button from '@mui/material/Button';
 import SvgIcon from '@mui/material/SvgIcon';
 import styles from './header.module.css';
+import Link from 'next/link';
 
 export default function Header() {
   return (
     <div className={styles.container}>
       <div className="flex h-16 max-w-[1440px] text-white" style={{ backgroundColor: '#1b1b1b' }}>
         <div className="flex items-center gap-2">
-          <p className="text-white">George Weblog</p>
+          <Link href="/">George Weblog</Link>
         </div>
         <nav>
           <ul className="flex gap-4 justify-space text-base items-center h-full pl-8 mr-auto">
             <li>
-              <a href="/upload">upload</a>
+              <Link href="/upload">Upload Post</Link>
+            </li>
+            <li longin>
+              <Link href="/upload">Delete Post</Link>
             </li>
             <li>
-              <a>delete</a>
+              <Link href="/author/me">About Me</Link>
+            </li>
+            <li>
+              <Link href="/me">About Me</Link>
             </li>
           </ul>
         </nav>
