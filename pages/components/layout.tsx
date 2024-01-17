@@ -1,5 +1,5 @@
 import Header from './header';
-
+import propTypes from 'prop-types';
 export function Layout({ children }) {
   return (
     <div className="grid">
@@ -18,3 +18,7 @@ export function Layout({ children }) {
     </div>
   );
 }
+
+Layout.prototype = {
+  children: propTypes.node,
+};
