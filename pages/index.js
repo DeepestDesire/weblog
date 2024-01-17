@@ -1,9 +1,19 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-import Head from 'next/head';
 import { getAllPostsData } from '../lib/posts';
 import styles from './index.module.css';
 import FeaturedArticles from './featuredArticles/featuredArticles';
+
+export async function getServerSideProps() {
+  console.log('index getServerSideProps');
+  let allPostsData = await getAllPostsData();
+  allPostsData = allPostsData || [];
+  return {
+    props: {
+      allPostsData: allPostsData,
+    },
+  };
+}
 
 export default function Home({ allPostsData }) {
   return (
@@ -27,13 +37,3 @@ export default function Home({ allPostsData }) {
   );
 }
 
-export async function getServerSideProps() {
-  console.log('index getServerSideProps');
-  let allPostsData = await getAllPostsData();
-  allPostsData = allPostsData || [];
-  return {
-    props: {
-      allPostsData: allPostsData,
-    },
-  };
-}

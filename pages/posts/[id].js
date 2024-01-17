@@ -1,7 +1,8 @@
-import Link from 'next/link';
 import Markdown from 'react-markdown';
 import { getSinglePost, getAllPostIdsFromServer } from '../../lib/posts';
 import Date from '../components/date';
+import propTypes from 'prop-types';
+
 export default function Post({ postData }) {
   const { title, date, content } = postData;
   return (
@@ -33,3 +34,11 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
+Post.propTypes = {
+  postData: {
+    title: propTypes.string,
+    date: propTypes.string,
+    content: propTypes.string,
+  },
+};

@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { dealWithData, deletePost, downloadImage } from './model';
+import { dealWithData, deletePost } from './model';
 
 export default function Upload() {
   const ref1 = useRef('title');
   const ref2 = useRef('content');
 
-  let onClick = useCallback((e) => {
+  let onClick = useCallback(() => {
     dealWithData(ref1.current.value, ref2.current.value);
   }, []);
 
-  let deleteAction = useCallback((e) => {
+  let deleteAction = useCallback(() => {
     deletePost(ref1.current.value, ref2.current.value);
   }, []);
 
