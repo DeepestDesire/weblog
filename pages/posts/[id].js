@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Markdown from 'react-markdown';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
-import remarkGfm from 'remark-gfm';
 
 import { getSinglePost, getAllPostIdsFromServer } from '../../lib/posts';
 
@@ -15,20 +14,18 @@ export default function Post({ postData }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <section className="mx-4 max-w-full overflow-hidden">
-        <article>
+      <section className="grid">
+        <article className=" place-self-center">
           <h1 className="text-2xl font-semibold mt-4 mb-8">{title}</h1>
           <div>
             <Date dateString={date}></Date>
           </div>
-          <Markdown  >
-            {content}
-          </Markdown>
+          <Markdown>{content}</Markdown>
         </article>
-        <h2>
-          <Link href="/">Back to home</Link>
-        </h2>
       </section>
+      <h2 className=" place-self-center">
+        <Link href="/">Back to home</Link>
+      </h2>
     </Layout>
   );
 }
