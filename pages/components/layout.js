@@ -11,7 +11,7 @@ export default function Layout({ children }) {
         </div>
       </div>
       {children}
-      <footer className="flex justify-center mb-2 pt-2 border-solid border-y border-b-0">
+      <footer className="flex justify-center mt-4 pt-4 border-solid border-t">
         <a href="/" rel="noreferrer">
           Powered by
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
