@@ -19,6 +19,6 @@ export function Layout({ children }) {
   );
 }
 
-Layout.prototype = {
-  children: propTypes.node,
+Layout.propTypes = {
+  children: propTypes.any,
 };
