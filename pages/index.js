@@ -27,7 +27,8 @@ export default function Home({ allPostsData }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+  console.log('index getServerSideProps');
   let allPostsData = await getAllPostsData();
   allPostsData = allPostsData || [];
   return {

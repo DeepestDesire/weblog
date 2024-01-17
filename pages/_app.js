@@ -4,7 +4,6 @@ import Layout from './components/layout';
 import '../styles/global.css';
 // eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
-  console.log('session :>> ', session);
   return (
     <SessionProvider session={session}>
       <Layout>

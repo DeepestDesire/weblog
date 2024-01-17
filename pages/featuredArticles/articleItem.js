@@ -6,11 +6,6 @@ import styles from './articleItem.module.css';
 export default function ArticleItem({ id, title, content }) {
   const router = useRouter();
 
-  useEffect(() => {
-    console.log('title', title);
-  }, []);
-
-
   const click = useCallback(() => {
     router.push(`/posts/${id}`);
   }, [id]);

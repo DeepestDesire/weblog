@@ -16,7 +16,7 @@ export default function Header() {
             <li>
               <Link href="/upload">Upload Post</Link>
             </li>
-            <li longin>
+            <li>
               <Link href="/upload">Delete Post</Link>
             </li>
             <li>
