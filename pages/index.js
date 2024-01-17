@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import Head from 'next/head';
-import { getSortedPostsData } from '../lib/posts';
+import { getAllPostsData } from '../lib/posts';
 import Layout from '../components/layout';
 import styles from './index.module.css';
 import FeaturedArticles from './featuredArticles/featuredArticles';
@@ -36,7 +36,7 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  let allPostsData = await getSortedPostsData();
+  let allPostsData = await getAllPostsData();
   allPostsData = allPostsData || []; 
   return {
     props: {

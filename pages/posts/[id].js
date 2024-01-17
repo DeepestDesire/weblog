@@ -4,8 +4,9 @@ import Link from 'next/link';
 import Markdown from 'react-markdown';
 import Date from '../../components/date';
 import Layout from '../../components/layout';
+import remarkGfm from 'remark-gfm';
 
-import { getPostDataFromServer, getAllPostIdsFromServer } from '../../lib/posts';
+import { getSinglePost, getAllPostIdsFromServer } from '../../lib/posts';
 
 export default function Post({ postData }) {
   const { title, date, content } = postData;
@@ -20,7 +21,7 @@ export default function Post({ postData }) {
           <div>
             <Date dateString={date}></Date>
           </div>
-          <Markdown>
+          <Markdown  >
             {content}
           </Markdown>
         </article>
@@ -41,7 +42,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostDataFromServer(params.id);
+  const postData = await getSinglePost(params.id);
   return {
     props: {
       postData,
