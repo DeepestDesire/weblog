@@ -39,9 +39,7 @@ button {
 }
 
 #__next {
-  height: 100%;
-  /* overflow: auto; */
-  display: flex ;
+
 }
 
 
