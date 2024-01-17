@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Header from './header';
 import propTypes from 'prop-types';
 export function Layout({ children }) {
@@ -10,10 +11,10 @@ export function Layout({ children }) {
       </div>
       {children}
       <footer className="flex justify-center mt-4 pt-4 border-solid border-t  border-[#cdcdcd]">
-        <a href="/" rel="noreferrer">
+        <Link href="/" rel="noreferrer">
           Powered by
           <img src="/vercel.svg" alt="Vercel" className="h-4" />
-        </a>
+        </Link>
       </footer>
     </div>
   );
