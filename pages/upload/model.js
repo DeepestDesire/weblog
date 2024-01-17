@@ -68,3 +68,5 @@ export function downloadImage() {
     }
   );
 }
+
+export default deletePost;

@@ -23,3 +23,5 @@ export function Layout({ children }) {
 Layout.propTypes = {
   children: propTypes.any,
 };
+
+export default Layout;
