@@ -2,9 +2,9 @@
 /* eslint-disable react/no-unknown-property */
 import Head from 'next/head';
 import { getAllPostsData } from '../lib/posts';
-import Layout from '../components/layout';
 import styles from './index.module.css';
 import FeaturedArticles from './featuredArticles/featuredArticles';
+import Layout from './component/layout';
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -38,11 +38,10 @@ export default function Home({ allPostsData }) {
 export async function getStaticProps() {
   let allPostsData = await getAllPostsData();
   console.log('allPostsData :>> ', allPostsData);
-  allPostsData = allPostsData || []; 
+  allPostsData = allPostsData || [];
   return {
     props: {
       allPostsData: allPostsData,
     },
   };
 }
-

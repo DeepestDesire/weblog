@@ -6,11 +6,21 @@ import styles from './header.module.css';
 export default function Header() {
   return (
     <div className={styles.container}>
-      <div className="flex justify-between px-4 h-16 items-center bg-black" style={{ backgroundColor: '#1b1b1b' }}>
+      <div className="flex h-16 max-w-[1440px] text-white" style={{ backgroundColor: '#1b1b1b' }}>
         <div className="flex items-center gap-2">
           <p className="text-white">George Weblog</p>
         </div>
-        <Button className={styles.menuButton}  disabled={false} size="medium" color="success" variant="delete">
+        <nav>
+          <ul className="flex gap-4 justify-space text-base items-center h-full pl-8 mr-auto">
+            <li>
+              <a href="/upload">upload</a>
+            </li>
+            <li>
+              <a>delete</a>
+            </li>
+          </ul>
+        </nav>
+        <Button className={styles.menuButton} disabled={false} size="medium" color="success" variant="delete">
           <SvgIcon>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" fill="white">
               <title>menu</title>

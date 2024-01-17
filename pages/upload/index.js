@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../components/layout';
+import Layout from '../component/layout';
 import { useCallback, useEffect, useRef } from 'react';
 import { dealWithData, deletePost, downloadImage } from './model';
 
@@ -26,7 +26,7 @@ export default function Upload() {
       <Head>
         <title>{'文档上传'}</title>
       </Head>
-      <section className="flex">
+      <section className="max-w-[1440px] place-self-center flex w-[1440px]">
         <article className="flex-1">
           <h1 className="text-2xl font-semibold mt-4 mb-8">{'文档上传'}</h1>
           <div>
@@ -48,7 +48,7 @@ export default function Upload() {
           <button onClick={deleteAction}>删除文档</button>
         </article>
       </section>
-      <h2>
+      <h2 className="max-w-[1440px] place-self-center ">
         <Link href="/">Back to home</Link>
       </h2>
     </Layout>
