@@ -27,7 +27,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <Button className={styles.menuButton} disabled={false} size="medium" color="success" variant="delete">
+        <Button className={styles.menuButton} disabled={false} size="medium" color="success" variant="text">
           <SvgIcon>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" fill="white">
               <title>menu</title>
