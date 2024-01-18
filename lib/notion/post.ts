@@ -15,13 +15,19 @@ export async function getPostBlock(id: string) {
   let response = await notion.blocks.children.list({ block_id: id });
   return { title: id, content: JSON.stringify(response.results) };
 }
+
 export async function getPost(id: string) {
   let response = await notion.pages.retrieve({ page_id: id });
   return response;
 }
 
 export async function getMarkDownWithPost(id: string) {
-  const mdblocks = await n2m.pageToMarkdown(id);
-  const mdString = n2m.toMarkdownString(mdblocks);
-  return { title: id, content: mdString.parent };
+  try {
+    const mdblocks = await n2m.pageToMarkdown(id);
+    const mdString = n2m.toMarkdownString(mdblocks);
+    return { title: id, content: mdString.parent };
+  } catch (error) {
+    console.log('object :>> ', error);
+    return { title: '访问资源失败', content: '请返回主页' };
+  }
 }
