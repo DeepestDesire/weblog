@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { dealWithData, deletePost } from './model';
+import { dealWithData, deletePost } from '../../lib/model';
 
 export default function Upload() {
   const ref1 = useRef('title');

@@ -1,9 +1,9 @@
-import styles from './articleItem.module.css';
+import styles from './Post.module.css';
 import propTypes from 'prop-types';
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function ArticleItem({ id, title, content }) {
+export function Post({ id, title, content }) {
   const router = useRouter();
 
   const click = useCallback(() => {
@@ -23,7 +23,7 @@ export default function ArticleItem({ id, title, content }) {
   );
 }
 
-ArticleItem.propTypes = {
+Post.propTypes = {
   id: propTypes.string,
   title: propTypes.string,
   content: propTypes.string,

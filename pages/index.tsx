@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-unknown-property */
-import { getAllPostsData } from '../lib/posts';
 import styles from './index.module.css';
-import FeaturedArticles from './featuredArticles/featuredArticles';
+
+import { getAllPostsData } from '../lib/posts';
+
+import { PostList } from '../components/Post/PostList';
 
 export async function getServerSideProps() {
   console.log('index getServerSideProps');
@@ -30,10 +30,9 @@ export default function Home({ allPostsData }) {
       </div>
       <section className="mt-4">
         <div className={styles.content}>
-          <FeaturedArticles allPostsData={allPostsData}></FeaturedArticles>
+          <PostList allPostsData={allPostsData} />
         </div>
       </section>
     </main>
   );
 }
-

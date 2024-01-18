@@ -1,16 +1,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-import ArticleItem from './articleItem';
-import styles from './featuredArticles.module.css';
+import { Post } from './Post';
+import styles from './PostList.module.css';
 
-export default function FeaturedArticles({ allPostsData }) {
+export function PostList({ allPostsData }) {
   return (
     <div className={styles.sectionContainer}>
       <h2 className="font-base mb-2">Featured Articles</h2>
       <div className={styles.tileContainer}>
-        {allPostsData.map((props) => (
-          <ArticleItem key={props.id} {...props} />
-        ))}
+        {allPostsData ? allPostsData.map((props) => <Post key={props.id} {...props} />) : null}
       </div>
     </div>
   );
