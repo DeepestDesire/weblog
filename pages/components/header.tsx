@@ -23,7 +23,7 @@ export default function Header() {
               <Link href="/author/me">About Me</Link>
             </li>
             <li>
-              <Link href="/me">About Me</Link>
+              <Link href="/api/auth/signin">Sign In</Link>
             </li>
           </ul>
         </nav>

@@ -8,7 +8,7 @@ export default function ArticleItem({ id, title, content }) {
 
   const click = useCallback(() => {
     router.push(`/posts/${id}`);
-  }, [id]);
+  }, [id, router]);
 
   return (
     <div className={styles.card} onClick={click}>
