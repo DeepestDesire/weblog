@@ -1,7 +1,7 @@
 import { db } from './kysely';
 
-export async function getSinglePost(id) {
-  const filteredPosts =await db.selectFrom('Post').selectAll().where('id', '=', id). execute();
+export async function getSinglePost(id: string) {
+  const filteredPosts = await db.selectFrom('Post').selectAll().where('id', '=', id).execute();
   return {
     ...filteredPosts[0],
     date: new Date().toJSON(),
@@ -33,11 +33,10 @@ export async function getAllPostsData() {
   return result;
 }
 
-
 export async function addPost() {}
 
 export async function deletePost(id) {
-  const result = await db.deleteFrom('Post').where('Post.id','=',id).executeTakeFirst();
+  const result = await db.deleteFrom('Post').where('Post.id', '=', id).executeTakeFirst();
   console.log('deletePost :>> ', result.numDeletedRows);
   return result;
 }

@@ -17,8 +17,18 @@ export function sendRequest(data) {
       // setLoading(false);
     });
 }
-
-export function dealWithData(title, content) {
+//
+export async function getPost(id: string) {
+  return await fetch(`/api/post/${id}`, {
+    method: 'GET',
+    mode: 'no-cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: { 'Content-type': 'application/json' },
+  }).then((res) => res.json());
+}
+// create post
+export function createPostWith(title, content) {
   sendRequest({ title, content });
 }
 

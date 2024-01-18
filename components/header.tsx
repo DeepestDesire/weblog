@@ -14,7 +14,7 @@ export default function Header() {
         <nav>
           <ul className="flex gap-4 justify-space text-base items-center h-full pl-8 mr-auto">
             <li>
-              <Link href="/upload">Upload Post</Link>
+              <Link href="/posts/update">Update Post</Link>
             </li>
             <li>
               <Link href="/upload">Delete Post</Link>

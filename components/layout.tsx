@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import Image from 'next/image';
 export function Layout({ children }) {
   return (
-    <div className="grid">
+    <div className="flex flex-col h-full">
       <div className="top-0 sticky">
         <div className="bg-[#1b1b1b] border-solid border-b border-[#cdcdcd]">
           <Header></Header>
