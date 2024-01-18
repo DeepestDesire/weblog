@@ -13,8 +13,7 @@ export function Layout({ children }) {
       {children}
       <footer className="flex justify-center mt-4 pt-4 border-solid border-t  border-[#cdcdcd]">
         <Link href="/" rel="noreferrer">
-          Powered by
-          <Image src="/vercel.svg" alt="Vercel" className="h-4" />
+          Powered by George
         </Link>
       </footer>
     </div>
