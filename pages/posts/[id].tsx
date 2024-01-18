@@ -1,5 +1,5 @@
 import Markdown from 'react-markdown';
-import { getMarkDownWithPost } from '../../lib/notion/post';
+import { getMarkDownWithPost, getPost } from '../../lib/notion/post';
 
 export default function Post({ data }) {
   if (!data) return null;
@@ -15,10 +15,11 @@ export default function Post({ data }) {
 }
 
 export async function getServerSideProps({ params }) {
-  const data = await getMarkDownWithPost(params.id);
+  const { content } = await getMarkDownWithPost(params.id);
+  const { title } = await getPost(params.id);
   return {
     props: {
-      data,
+      data: { title, content },
     },
   };
 }

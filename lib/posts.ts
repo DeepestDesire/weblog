@@ -32,11 +32,3 @@ export async function getAllPostsData() {
 
   return result;
 }
-
-export async function addPost() {}
-
-export async function deletePost(id) {
-  const result = await db.deleteFrom('Post').where('Post.id', '=', id).executeTakeFirst();
-  console.log('deletePost :>> ', result.numDeletedRows);
-  return result;
-}
