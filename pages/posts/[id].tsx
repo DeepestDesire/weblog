@@ -1,6 +1,6 @@
 import Markdown from 'react-markdown';
 import { getSinglePost, getAllPostIdsFromServer } from '../../lib/posts';
-import Date from '../components/date';
+import Date from '../../components/date';
 import propTypes from 'prop-types';
 
 export default function Post({ postData }) {
