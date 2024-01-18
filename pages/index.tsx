@@ -3,10 +3,10 @@ import styles from './index.module.css';
 import { getAllPostsData } from '../lib/posts';
 
 import { PostList } from '../components/Post/PostList';
+import { searchPost } from '../lib/notion/post';
 
 export async function getServerSideProps() {
-  console.log('index getServerSideProps');
-  let allPostsData = await getAllPostsData();
+  let allPostsData = await searchPost('');
   allPostsData = allPostsData || [];
   return {
     props: {
@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
         <div className={styles.hero}>
           <section className={styles.section}>
             <h1>
-              Resources for <u>Developers</u>, by Developers{' '}
+              Resources for <u>Developers</u>, by Developers
             </h1>
             <p>Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.</p>
           </section>
