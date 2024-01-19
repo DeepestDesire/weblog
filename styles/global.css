@@ -1,41 +1,29 @@
-html,
-body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply font-semibold;
+    @apply my-2;
+  }
+  h2 {
+    @apply text-xl;
+    @apply font-semibold;
+    @apply my-2;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  h3 {
+    @apply text-lg;
+    @apply font-semibold;
+    @apply mt-4;
+    @apply mb-4;
+  }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-h1,
-h2,
-p,
-ul {
-  margin: 0;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
+  p {
+    @apply my-4;
+  }
 }
 
 :root {
@@ -47,7 +35,3 @@ button {
 #__next {
   height: 100%;
 }
-
-/* @tailwind base; */
-@tailwind components;
-@tailwind utilities;

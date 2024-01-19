@@ -5,7 +5,7 @@ export default function Post({ data }) {
   if (!data) return null;
   const { title, content } = data;
   return (
-    <section className="max-w-[1440px] place-self-center">
+    <section className="max-w-[1440px] place-self-center mx-16">
       <article>
         <h1 className="text-2xl font-semibold mt-4 mb-8">{title}</h1>
         <Markdown>{content}</Markdown>
