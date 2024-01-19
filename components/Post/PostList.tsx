@@ -1,14 +1,18 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-unknown-property */
-import { Post } from './Post';
 import styles from './PostList.module.css';
 
-export function PostList({ allPostsData }) {
+import { Post } from './Post';
+import { searchPost } from '../../lib/notion/post';
+
+export async function PostList() {
+  let allPostsData = await searchPost('');
+  allPostsData = allPostsData || [];
   return (
     <div className={styles.sectionContainer}>
       <h2 className="font-base mb-2">Featured Articles</h2>
       <div className={styles.tileContainer}>
-        {allPostsData ? allPostsData.map((props) => <Post key={props.id} {...props} />) : null}
+        {allPostsData.map((props) => (
+          <Post key={props.id} {...props} />
+        ))}
       </div>
     </div>
   );
