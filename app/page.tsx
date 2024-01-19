@@ -9,7 +9,7 @@ export default async function Page() {
     <main className={styles.container}>
       <div className={styles.heroContainer}>
         <div className={styles.hero}>
-          <section className={styles.section}>
+          <section>
             <h1>
               Resources for <u>Developers</u>, by Developers
             </h1>
