@@ -1,21 +1,10 @@
 import styles from './index.module.css';
-
-import { getAllPostsData } from '../lib/posts';
-
 import { PostList } from '../components/Post/PostList';
 import { searchPost } from '../lib/notion/post';
 
-export async function getServerSideProps() {
+export default async function Page() {
   let allPostsData = await searchPost('');
   allPostsData = allPostsData || [];
-  return {
-    props: {
-      allPostsData: allPostsData,
-    },
-  };
-}
-
-export default function Home({ allPostsData }) {
   return (
     <main className={styles.container}>
       <div className={styles.heroContainer}>

@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+'use client';
 import Button from '@mui/material/Button';
 import SvgIcon from '@mui/material/SvgIcon';
 import styles from './header.module.css';

@@ -1,14 +1,12 @@
+'use client';
+
 import styles from './Post.module.css';
-import propTypes from 'prop-types';
 import { useCallback } from 'react';
-import { useRouter } from 'next/navigation';
 
 export function Post({ id, title, content }) {
-  const router = useRouter();
-
   const click = useCallback(() => {
-    router.push(`/posts/${id}`);
-  }, [id, router]);
+    console.log('id :>> ', id);
+  }, [id]);
 
   return (
     <div className={styles.card} onClick={click}>
@@ -22,9 +20,3 @@ export function Post({ id, title, content }) {
     </div>
   );
 }
-
-Post.propTypes = {
-  id: propTypes.string,
-  title: propTypes.string,
-  content: propTypes.string,
-};
