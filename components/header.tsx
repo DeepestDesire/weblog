@@ -20,7 +20,7 @@ export default function Header() {
               <Link href="/upload">Delete Post</Link>
             </li>
             <li>
-              <Link href="/author/me">About Me</Link>
+              <Link href="/author">About Me</Link>
             </li>
             <li>
               <Link href="/api/auth/signin">Sign In</Link>

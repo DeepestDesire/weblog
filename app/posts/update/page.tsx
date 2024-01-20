@@ -1,6 +1,8 @@
+'use client';
+
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { getPost, deletePost } from '../../lib/model';
 import Markdown from 'react-markdown';
+import { getPost, deletePost } from '../../../lib/model';
 
 export default function Upload() {
   const postIdRef = useRef<HTMLInputElement>(null);

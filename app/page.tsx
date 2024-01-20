@@ -1,4 +1,3 @@
-import styles from './index.module.css';
 import { PostList } from '../components/Post/PostList';
 
 export default async function Page() {
