@@ -10,7 +10,8 @@ export async function searchPost(title: string) {
       title: Array<RichTextItemResponse>;
       id: string;
     };
-    return { id: page.id, title: page.icon['emoji'] + title.title[0].plain_text };
+    let icon = page.icon ? page.icon['emoji'] : '';
+    return { id: page.id, title: icon + title.title[0].plain_text };
   });
 }
 
@@ -27,7 +28,8 @@ export async function getPost(id: string) {
     title: Array<RichTextItemResponse>;
     id: string;
   };
-  return { title: response.icon['emoji'] + title.title[0].plain_text };
+  let emoji = response.icon ? response.icon['emoji'] : '';
+  return { title: emoji + title.title[0].plain_text };
 }
 
 export async function getMarkDownWithPost(id: string) {
