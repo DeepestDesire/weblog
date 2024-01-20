@@ -3,7 +3,7 @@
 import styles from './Post.module.css';
 import { useCallback } from 'react';
 
-export function Post({ id, title, content }) {
+export function Post({ id, title, content = '' }) {
   const click = useCallback(() => {
     console.log('id :>> ', id);
   }, [id]);
