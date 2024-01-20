@@ -3,8 +3,8 @@ import { getPost, deletePost } from '../../lib/model';
 import Markdown from 'react-markdown';
 
 export default function Upload() {
-  const postIdRef = useRef('title');
-  const ref2 = useRef('content');
+  const postIdRef = useRef<HTMLInputElement>(null);
+  const ref2 = useRef<HTMLTextAreaElement>(null);
 
   const [post, setPost] = useState({
     title: '',
@@ -12,8 +12,9 @@ export default function Upload() {
   });
 
   let getAction = useCallback(() => {
-    if (postIdRef.current.length > 0) {
-      getPost(postIdRef.current).then((postInfo) => {
+    if (!postIdRef.current) return;
+    if (postIdRef.current.value.length > 0) {
+      getPost(postIdRef.current.value).then((postInfo) => {
         setPost({ title: postInfo.title, content: postInfo.content });
       });
     }
