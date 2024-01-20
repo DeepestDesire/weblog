@@ -12,15 +12,15 @@ export default function Upload() {
   });
 
   let getAction = useCallback(() => {
-    if (postIdRef.current.value.length > 0) {
-      getPost(postIdRef.current.value).then((postInfo) => {
+    if (postIdRef.current.length > 0) {
+      getPost(postIdRef.current).then((postInfo) => {
         setPost({ title: postInfo.title, content: postInfo.content });
       });
     }
   }, []);
 
   let deleteAction = useCallback(() => {
-    deletePost(postIdRef.current.value);
+    deletePost(postIdRef.current);
   }, []);
 
   useEffect(() => {
