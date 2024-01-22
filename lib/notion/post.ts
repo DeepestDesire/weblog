@@ -5,13 +5,18 @@ import { n2m } from './notionToMarkDown';
 export async function searchPost(title: string) {
   let response = await notion.search({ query: title, filter: { property: 'object', value: 'page' } });
   return (response.results as PageObjectResponse[]).map((page) => {
-    let title = page.properties.title as {
-      type: 'title';
-      title: Array<RichTextItemResponse>;
-      id: string;
-    };
+    let coverURL, title;
     let icon = page.icon ? page.icon['emoji'] : '';
-    return { id: page.id, title: icon + title.title[0].plain_text };
+
+    if (page.cover?.type === 'external') {
+      coverURL = page.cover.external.url;
+    }
+
+    if (page.properties.title.type === 'title') {
+      title = page.properties.title.title[0].plain_text;
+    }
+
+    return { id: page.id, title: icon + title, coverURL: coverURL };
   });
 }
 

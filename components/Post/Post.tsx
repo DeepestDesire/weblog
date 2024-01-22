@@ -1,9 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './Post.module.css';
 import { useCallback } from 'react';
 
-export function Post({ id, title, content = '' }) {
+export function Post({ id, title, coverURL }) {
   const click = useCallback(() => {
     console.log('id :>> ', id);
   }, [id]);
@@ -16,7 +17,17 @@ export function Post({ id, title, content = '' }) {
       >
         <a href={`/posts/${id}`}>{title}</a>
       </h3>
-      <p className={styles.content}>{content && content.length > 100 ? content.slice(0, 200) : content}</p>
+      {coverURL && (
+        <Image
+          src={coverURL}
+          alt="cover"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ objectFit: 'cover', width: '100%', height: '100px' }}
+        ></Image>
+      )}
+      {/* <p className={styles.content}>{content && content.length > 100 ? content.slice(0, 200) : content}</p> */}
     </div>
   );
 }
