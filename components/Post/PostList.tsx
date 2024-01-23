@@ -2,6 +2,7 @@ import styles from './PostList.module.css';
 
 import { Post } from './Post';
 import { searchPost } from '../../lib/notion/post';
+export const dynamic = 'force-dynamic'
 
 export async function PostList() {
   let allPostsData = await searchPost('');
