@@ -2,9 +2,12 @@ import styles from './PostList.module.css';
 
 import { Post } from './Post';
 import { searchPost } from '../../lib/notion/post';
-export const dynamic = 'force-dynamic'
+import { cookies } from 'next/headers';
 
 export async function PostList() {
+  const cookie = cookies();
+  const token = cookie.get(' __Host-next-auth.csrf-token')?.value;
+
   let allPostsData = await searchPost('');
   allPostsData = allPostsData || [];
   return (
@@ -15,6 +18,7 @@ export async function PostList() {
           <Post key={props.id} {...props} />
         ))}
       </div>
+      <h1>{token || ''}</h1>
     </div>
   );
 }
