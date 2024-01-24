@@ -1,4 +1,10 @@
 module.exports = {
+  // only work in development environment
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
   images: {
     remotePatterns: [
       {

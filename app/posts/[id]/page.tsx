@@ -1,9 +1,16 @@
 import Markdown from 'react-markdown';
 import { getMarkDownWithPost, getPost } from '../../../lib/notion/post';
 
+// parallel data fetch
+
 export default async function Page({ params }: { params: { id: string } }) {
-  const { content } = await getMarkDownWithPost(params.id);
-  const { title } = await getPost(params.id);
+  // initial fetch promise
+  const markdownData = getMarkDownWithPost(params.id);
+  const postData = getPost(params.id);
+
+  // use promise all to handle multiple promise
+  const [{ content }, { title }] = await Promise.all([markdownData, postData]);
+
   return (
     <section className="max-w-[1440px] place-self-center mx-16 text-black">
       <article>
