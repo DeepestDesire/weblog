@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={'flex flex-1 flex-col text-white text-base ' + inter.className}>
+      <body className={'flex flex-1 flex-col text-base ' + inter.className}>
         <div className="flex flex-col h-full">
           <div className="top-0 sticky">
             <div className="bg-[#1b1b1b] border-solid border-b border-[#cdcdcd]">

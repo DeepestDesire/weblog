@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <div className={styles.container}>
-      <div className="flex h-16 max-w-[1440px] text-white" style={{ backgroundColor: '#1b1b1b' }}>
+      <div className="flex h-16 max-w-[1440px] text-white bg-[#1b1b1b] mx-4">
         <div className="flex items-center gap-2">
           <Link href="/">George Weblog</Link>
         </div>

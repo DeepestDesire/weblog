@@ -3,8 +3,8 @@ import { PostList } from '../components/Post/PostList';
 export default async function Page() {
   return (
     <main>
-      <div className="bg-primary">
-        <div className="flex h-[284px] max-w-[52rem] mx-auto ">
+      <div className="bg-primary overflow-hidden px-4">
+        <div className="h-[284px] max-w-[52rem] mx-auto text-white">
           <section>
             <h1 className="text-5xl">
               Resources for <u>Developers</u>, by Developers
