@@ -8,6 +8,8 @@ RUN apk add g++ make py3-pip
 
 WORKDIR /app
 
+RUN npm config set registry https://registry.npmmirror.com
+
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
