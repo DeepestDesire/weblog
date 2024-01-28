@@ -1,5 +1,15 @@
 import Markdown from 'react-markdown';
 import { getMarkDownWithPost, getPost } from '../../../lib/notion/post';
+export async function generateMetadata({ params }) {
+  const markdownData = getMarkDownWithPost(params.id);
+  const postData = getPost(params.id);
+  // use promise all to handle multiple promise
+  const [{ content }, { title }] = await Promise.all([markdownData, postData]);
+  return {
+    title: title,
+    description: content,
+  };
+}
 
 // parallel data fetch
 
