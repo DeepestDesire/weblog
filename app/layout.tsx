@@ -1,4 +1,5 @@
 import './globals.css';
+import { WebVitals } from './_components/web-vitals';
 import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '../components/header';
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={'flex flex-1 flex-col text-base ' + inter.className}>
+        <WebVitals />
         <div className="flex flex-col h-full">
           <div className="top-0 sticky">
             <div className="bg-[#1b1b1b] border-solid border-b border-[#cdcdcd]">
