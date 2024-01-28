@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://weblog-george.vercel.app/</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/update</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/author</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/api/auth/signin</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/dab1702e-83bd-4994-b391-abe06df1c644</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/d45b8674-f230-448f-a217-15369d9c82df</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/011fb085-9445-4fa4-a7cc-6c197c6c2937</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/401a7ef1-42c5-4f59-9d53-7afd6ad3c802</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/436969b6-89f4-4f0c-a790-cc171ec52534</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/682ff137-c4e8-40ef-be2a-28994e05d2fe</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/e6fdcb1d-5478-4fb1-be0a-c3ed3922c458</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/a2bc192f-d75c-40b6-a1d5-32f36339a8db</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/96ced895-e676-4e36-8b86-b387584bc872</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/c0126cb4-2cc4-48f9-bbd0-fdcee48f6747</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://weblog-george.vercel.app/posts/0bac877a-84c6-4722-98b9-ff8112eb9226</loc>
+  <lastmod>2024-01-28T03:16:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
