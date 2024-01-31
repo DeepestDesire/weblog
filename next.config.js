@@ -1,5 +1,6 @@
 module.exports = {
   // only work in development environment
+  output: 'standalone',
   logging: {
     fetches: {
       fullUrl: true,
