@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
             </div>
           </div>
           {children}
-          <footer className="flex justify-center mt-4 pt-4 border-solid border-t  border-[#cdcdcd]">
-            <Link href="/" rel="noreferrer">
-              Powered by George
+          <footer className="flex justify-center my-4 py-4 border-solid border-t border-[#cdcdcd]">
+            <Link href="https://beian.miit.gov.cn" rel="noreferrer">
+              沪ICP备2024048045号-111
             </Link>
           </footer>
         </div>
