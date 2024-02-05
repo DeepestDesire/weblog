@@ -31,3 +31,12 @@
   --border-primary: #cdcdcd;
   --type-heading-h5-font-size: 1.2rem;
 }
+
+article {
+  width: 100%;
+}
+
+article pre {
+  width: 90vw;
+  overflow: scroll;
+}
