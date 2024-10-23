@@ -2,11 +2,12 @@
 
 import { createBlogDatabase } from '../lib/mongodb';
 import { useState, useEffect } from 'react';
-import { createBlog, getAllBlogs } from '../lib/mongodb'; // 假设你已经在 mongodb 文件中实现了 getAllBlogs 函数
+import { createBlog, getAllBlogs, deleteBlog } from '../lib/mongodb'; // 假设你已经在 mongodb 文件中实现了 getAllBlogs 和 deleteBlog 函数
 
 export default function DatabaseDashboard() {
   const [message, setMessage] = useState('');
   const [blogs, setBlogs] = useState([]); // 新增状态来存储博客列表
+  const [loading, setLoading] = useState(false); // 新增状态来跟踪加载状态
 
   const initializeDatabase = async () => {
     const result = await createBlogDatabase();
@@ -29,17 +30,13 @@ export default function DatabaseDashboard() {
       tags: ['示例', '博客'],
     };
 
-    createBlog(exampleBlog).then((result) => {
-      if (result.success) {
-        console.log('示例博客创建成功，ID:', result.blogId);
-      } else {
-        console.error('示例博客创建失败:', result.error);
-      }
-    });
+    handleCreateBlog(exampleBlog);
   };
 
   const fetchAllBlogs = async () => {
+    setLoading(true); // 开始加载
     try {
+      // 模拟网络延迟
       const result = await getAllBlogs();
       if (result.success) {
         setBlogs(result.blogs);
@@ -48,10 +45,48 @@ export default function DatabaseDashboard() {
       }
     } catch (error) {
       console.error('获取博客时出错:', error);
+    } finally {
+      setLoading(false); // 加载结束
     }
   };
 
-  // 使用 useEffect 在组件挂载时自动获取博客
+  const handleDelete = async (blogId) => {
+    setLoading(true); // 开始加载
+    try {
+      // 模拟网络延迟
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      const result = await deleteBlog(blogId);
+      if (result.success) {
+        // 删除成功后重新获取博客列表
+        fetchAllBlogs();
+      } else {
+        console.error('删除博客失败:', result.error);
+      }
+    } catch (error) {
+      console.error('删除博客时出错:', error);
+    } finally {
+      // setLoading(false); // 加载结束
+    }
+  };
+
+  const handleCreateBlog = async (blogData) => {
+    setLoading(true);
+    try {
+      const result = await createBlog(blogData);
+      if (result.success) {
+        fetchAllBlogs(); // 创建成功后刷新博客列表
+      } else {
+        console.error('创建博客失败:', result.error);
+      }
+    } catch (error) {
+      console.error('创建博客时出错:', error);
+    } finally {
+      // setLoading(false);
+    }
+  };
+
+  // 使用 useEffect 在组件挂载自动获取博客
   useEffect(() => {
     fetchAllBlogs();
   }, []);
@@ -68,20 +103,28 @@ export default function DatabaseDashboard() {
         创建博客
       </button>
 
-      <button onClick={fetchAllBlogs} className="mb-4 ml-2 px-4 py-2 bg-yellow-500 text-white rounded">
+      <button onClick={fetchAllBlogs} className="mb-4 px-4 py-2 bg-yellow-500 text-white rounded">
         获取所有博客
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {blogs.map((blog) => (
-          <div key={blog._id} className="p-4 border rounded shadow">
-            <h2 className="text-xl font-bold">{blog.title}</h2>
-            <p className="text-sm text-gray-600">{blog.subtitle}</p>
-            <p className="mt-2">{blog.content}</p>
-            <p className="text-sm text-gray-500">作者: {blog.author.username}</p>
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <div className="text-center text-gray-500">加载中...</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {blogs.map((blog) => (
+            <div key={blog._id} className="relative p-4 border rounded shadow">
+              <button onClick={() => handleDelete(blog._id)} className="absolute top-2 right-2 text-red-500">
+                删除
+              </button>
+              <h2 className="text-xl font-bold">{blog.title}</h2>
+              <p className="text-sm text-gray-600">{blog.subtitle}</p>
+              <p className="mt-2">{blog.content}</p>
+              <p className="text-sm text-gray-500">作者: {blog.author.username}</p>
+              <p className="mt-4 text-xs text-gray-400">ID: {blog._id}</p> {/* 显示博客 ID */}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

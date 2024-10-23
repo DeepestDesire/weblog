@@ -1,6 +1,6 @@
 'use server';
 
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 
 class MongoClientManager {
   client;
@@ -168,6 +168,26 @@ export async function getAllBlogs() {
     return { success: true, blogs: formattedBlogs };
   } catch (error) {
     console.error('获取博客时出错:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+export async function deleteBlog(blogId) {
+  try {
+    const db = mongoClientManager.client.db('blog');
+    const blogsCollection = db.collection('posts');
+
+    const result = await blogsCollection.deleteOne({ _id: new ObjectId(blogId) });
+
+    if (result.deletedCount === 1) {
+      console.log('博客删除成功，ID:', blogId);
+      return { success: true };
+    } else {
+      console.log('未找到要删除的博客，ID:', blogId);
+      return { success: false, error: '博客未找到' };
+    }
+  } catch (error) {
+    console.error('删除博客时出错:', error);
     return { success: false, error: error.message };
   }
 }
