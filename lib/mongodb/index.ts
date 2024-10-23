@@ -151,3 +151,23 @@ export async function createBlog(blogData) {
     return { success: false, error: error.message };
   }
 }
+
+export async function getAllBlogs() {
+  try {
+    const db = mongoClientManager.client.db('blog');
+    const blogsCollection = db.collection('posts');
+
+    const blogs = await blogsCollection.find({}).toArray();
+
+    // 将 ObjectId 转换为字符串
+    const formattedBlogs = blogs.map((blog) => ({
+      ...blog,
+      _id: blog._id.toString(),
+    }));
+
+    return { success: true, blogs: formattedBlogs };
+  } catch (error) {
+    console.error('获取博客时出错:', error);
+    return { success: false, error: error.message };
+  }
+}
