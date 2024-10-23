@@ -3,7 +3,7 @@
 import { createBlogDatabase } from '../lib/mongodb';
 import { useState } from 'react';
 import { createBlog } from '../lib/mongodb';
-export default function InitializeDatabaseButton() {
+export default function DatabaseDashboard() {
   const [message, setMessage] = useState('');
 
   const initializeDatabase = async () => {
