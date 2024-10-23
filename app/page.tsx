@@ -1,4 +1,5 @@
 import { PostList } from '../components/Post/PostList';
+import InitializeDatabaseButton from '../components/InitializeDatabaseButton';
 
 export default async function Page() {
   return (
@@ -14,6 +15,7 @@ export default async function Page() {
         </div>
       </div>
       <section className="mt-4 flex flex-clo">
+        <InitializeDatabaseButton />
         <PostList />
       </section>
     </main>

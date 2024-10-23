@@ -10,6 +10,7 @@ export async function PostList() {
 
   let allPostsData = await searchPost('');
   allPostsData = allPostsData || [];
+
   return (
     <div className={styles.sectionContainer}>
       <h2 className="font-base mb-2">Featured Articles</h2>

@@ -4,6 +4,7 @@ import { n2m } from './notionToMarkDown';
 
 export async function searchPost(title: string) {
   let response = await notion.search({ query: title, filter: { property: 'object', value: 'page' } });
+  return [];
   return (response.results as PageObjectResponse[]).map((page) => {
     let coverURL, title;
     let icon = page.icon ? page.icon['emoji'] : '';
