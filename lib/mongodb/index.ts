@@ -128,7 +128,7 @@ export async function createBlog(blogData) {
     const blogsCollection = db.collection('posts');
 
     // 插入博客文档
-    const result = await blogsCollection.insertOne({
+    const blog = await blogsCollection.insertOne({
       title: blogData.title,
       subtitle: blogData.subtitle,
       content: blogData.content,
@@ -144,8 +144,8 @@ export async function createBlog(blogData) {
       comments: [],
     });
 
-    console.log('博客创建成功，ID:', result.insertedId);
-    return { success: true, blogId: result.insertedId };
+    console.log('博客创建成功，ID:', blog.insertedId);
+    return { success: true, blogId: blog.insertedId.toString() };
   } catch (error) {
     console.error('创建博客时出错:', error);
     return { success: false, error: error.message };
