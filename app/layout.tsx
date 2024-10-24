@@ -25,11 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <WebVitals />
         {/* <SessionProvider session={session}> */}
         <div className="flex flex-col h-full">
-          <div className="top-0 sticky">
-            <div className="bg-[#1b1b1b] border-solid border-b border-[#cdcdcd]">
-              <HeaderNav></HeaderNav>
-            </div>
-          </div>
+          <HeaderNav></HeaderNav>
           {children}
           <footer className="flex justify-center my-4 py-4 border-solid border-t border-[#cdcdcd]">
             <Link href="https://beian.miit.gov.cn" rel="noreferrer">

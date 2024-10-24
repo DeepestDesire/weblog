@@ -16,7 +16,7 @@ export default async function Page() {
       </div>
       <section className="mt-4 flex flex-clo">
         <DatabaseDashboard />
-        <PostList />
+        {/* <PostList /> */}
       </section>
     </main>
   );
