@@ -1,7 +1,8 @@
 import Markdown from 'react-markdown';
 import { getMarkDownWithPost, getPost } from '../../../lib/notion/post';
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const markdownData = getMarkDownWithPost(params.id);
   const postData = getPost(params.id);
   // use promise all to handle multiple promise
@@ -14,7 +15,8 @@ export async function generateMetadata({ params }) {
 
 // parallel data fetch
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   // initial fetch promise
   const markdownData = getMarkDownWithPost(params.id);
   const postData = getPost(params.id);

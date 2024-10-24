@@ -1,10 +1,10 @@
 'use client';
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 import styles from './HeaderNav.module.css';
 import Link from 'next/link';
 
 export default function HeaderNav() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   return (
     <div className={styles.container}>
@@ -20,7 +20,7 @@ export default function HeaderNav() {
             <li>
               <Link href="/author">About Me</Link>
             </li>
-            {session?.user ? (
+            {/* {session?.user ? (
               <li>
                 <Link href="/posts/update/db">Update DB</Link>
               </li>
@@ -28,7 +28,7 @@ export default function HeaderNav() {
               <li>
                 <Link href="/api/auth/signin">Sign In</Link>
               </li>
-            )}
+            )} */}
           </ul>
         </nav>
         {/* <Button className={styles.menuButton} disabled={false} size="medium" color="success" variant="text"> */}
