@@ -5,7 +5,7 @@ import { MongoClient, ObjectId } from 'mongodb';
 class MongoClientManager {
   client;
   constructor() {
-    this.client = new MongoClient(process.env.MONGODB_URI);
+    this.client = new MongoClient(process.env.MONGODB_URI || '');
 
     this.client
       .connect()

@@ -111,7 +111,7 @@ export default function DatabaseDashboard() {
         <div className="text-center text-gray-500">加载中...</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {blogs.map((blog) => (
+          {blogs.map((blog: any) => (
             <div key={blog._id} className="relative p-4 border rounded shadow">
               <button onClick={() => handleDelete(blog._id)} className="absolute top-2 right-2 text-red-500">
                 删除
