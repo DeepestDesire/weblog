@@ -7,10 +7,10 @@ export default function HeaderNav() {
   // const { data: session } = useSession();
 
   return (
-    <div className={styles.container}>
-      <div className="top-0 sticky">
-        <div className="bg-[#1b1b1b] border-solid border-b border-[#cdcdcd]">
-          <div className="flex h-16 max-w-[1440px] text-white bg-[#1b1b1b] mx-4">
+    <div className="bg-[#1b1b1b] text-white">
+      <div className="w-[52rem] mx-auto top-0 sticky">
+        <div className="border-solid border-b border-[#cdcdcd]">
+          <div className="flex h-16 text-white ">
             <div className="flex items-center gap-2">
               <Link href="/">George Weblog</Link>
             </div>
