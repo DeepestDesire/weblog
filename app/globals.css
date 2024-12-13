@@ -21,10 +21,6 @@
     @apply mb-4;
   }
 
-  p {
-    @apply my-4;
-  }
-
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
