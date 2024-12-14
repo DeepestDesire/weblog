@@ -13,6 +13,7 @@ import { MainNav } from './components/main-nav';
 import { CalendarDateRangePicker } from './components/date-range-picker';
 import { Separator } from '@radix-ui/react-select';
 import { PodcastEmptyPlaceholder } from './components/podcast-empty-placeholder';
+import { TaskPage } from './tasks/page';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -62,9 +63,7 @@ export default function DashboardPage() {
             <TabsList>
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="analytics">导入</TabsTrigger>
-              <TabsTrigger value="reports" disabled>
-                Reports
-              </TabsTrigger>
+              <TabsTrigger value="reports">预览数据</TabsTrigger>
               <TabsTrigger value="notifications" disabled>
                 Notifications
               </TabsTrigger>
@@ -188,6 +187,9 @@ export default function DashboardPage() {
               </div>
               <Separator className="my-4" />
               <PodcastEmptyPlaceholder />
+            </TabsContent>
+            <TabsContent value="reports" className="space-y-4">
+              <TaskPage />
             </TabsContent>
           </Tabs>
         </div>
