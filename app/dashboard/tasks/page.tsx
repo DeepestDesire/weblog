@@ -45,12 +45,8 @@ async function getTasks() {
   return z.array(taskSchema).parse(tasks);
 }
 
-export async function TaskPage() {
+export default async function TaskPage() {
   const tasks = await getTasks();
-  const result = tasks.reduce((value, lastValue) => {
-    return value + lastValue.amountCNY;
-  }, 0);
-  console.log('tasks', result);
   return (
     <>
       <div className="md:hidden">
