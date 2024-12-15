@@ -2,13 +2,12 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { z } from 'zod';
+import { promise, z } from 'zod';
 
 import { columns } from './components/columns';
 import { DataTable } from './components/data-table';
 import { UserNav } from './components/user-nav';
 import { taskSchema } from './data/schema';
-import data from './data/transactions.json';
 
 type Transaction = {
   transactionID: string;
@@ -41,12 +40,12 @@ export const metadata: Metadata = {
 
 // Simulate a database read for tasks.
 async function getTasks() {
-  const tasks = transformTransaction(data);
+  const tasks = transformTransaction([]);
   return z.array(taskSchema).parse(tasks);
 }
 
 export default async function TaskPage() {
-  const tasks = await getTasks();
+  const tasks = await Promise.resolve([]);
   return (
     <>
       <div className="md:hidden">
