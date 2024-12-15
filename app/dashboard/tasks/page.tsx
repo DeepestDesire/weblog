@@ -8,7 +8,32 @@ import { columns } from './components/columns';
 import { DataTable } from './components/data-table';
 import { UserNav } from './components/user-nav';
 import { taskSchema } from './data/schema';
-import data from './data/tasks.json';
+import data from './data/transactions.json';
+
+type Transaction = {
+  transactionID: string;
+  transactionTime: string;
+  transactionType: string;
+  debitCreditOther: string;
+  paymentMethod: string;
+  amountCNY: number;
+  counterParty: string;
+  merchantOrderID: string;
+};
+
+function transformTransaction(data: any[]): Transaction[] {
+  return data.map((item) => ({
+    transactionID: item['交易单号'],
+    transactionTime: item['交易时间'],
+    transactionType: item['交易类型'].replace(/\n/g, ''),
+    debitCreditOther: item['收/支/其他'],
+    paymentMethod: item['交易方式'].replace(/\n/g, ''),
+    amountCNY: item['金额(元)'],
+    counterParty: item['交易对方'] ? item['交易对方'].replace(/\n/g, '') : '',
+    merchantOrderID: item['商户单号'],
+  }));
+}
+
 export const metadata: Metadata = {
   title: 'Tasks',
   description: 'A task and issue tracker build using Tanstack Table.',
@@ -16,14 +41,16 @@ export const metadata: Metadata = {
 
 // Simulate a database read for tasks.
 async function getTasks() {
-  const tasks = data;
-
+  const tasks = transformTransaction(data);
   return z.array(taskSchema).parse(tasks);
 }
 
 export async function TaskPage() {
   const tasks = await getTasks();
-
+  const result = tasks.reduce((value, lastValue) => {
+    return value + lastValue.amountCNY;
+  }, 0);
+  console.log('tasks', result);
   return (
     <>
       <div className="md:hidden">
