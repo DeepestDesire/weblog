@@ -1,3 +1,7 @@
+'use client';
+
+import { useRef } from 'react';
+
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -10,8 +14,34 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { parseCSVFile } from '@/lib/file/csv';
 
 export function PodcastEmptyPlaceholder() {
+  const fileInputRef = useRef<HTMLInputElement | null>(null); // 添加这一行
+
+  const handleFileChange = () => {
+    // 添加这一行
+    const file = fileInputRef.current?.files?.[0]; // 添加这一行
+    if (file) {
+      console.log('result', parseCSVFile(file));
+      parseCSVFile(file).then((data) => {});
+    }
+  }; // 添加这一行
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await fetch('/api/user/bill', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await response.json();
+    console.log(data);
+  };
+
   return (
     <div className="flex h-[450px] shrink-0 items-center justify-center rounded-md border border-dashed">
       <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
@@ -30,9 +60,23 @@ export function PodcastEmptyPlaceholder() {
           <path d="M17 18.5a9 9 0 1 0-10 0" />
         </svg>
 
-        <h3 className="mt-4 text-lg font-semibold">No episodes added</h3>
-        <p className="mb-4 mt-2 text-sm text-muted-foreground">You have not added any podcasts. Add one below.</p>
-        <Dialog>
+        <h3 className="mt-4 text-lg font-semibold">无消费记录</h3>
+        <p className="mb-4 mt-2 text-sm text-muted-foreground">你没有上传交易记录到服务器</p>
+
+        <div className="grid w-full max-w-sm items-start gap-1.5">
+          <Input
+            id="picture"
+            placeholder="请上传 CSV 问题"
+            type="file"
+            accept=".csv"
+            ref={fileInputRef} // 修改这一行
+            onChange={handleFileChange} // 修改这一行
+          />
+          <Button size="sm" className="relative">
+            确认
+          </Button>
+        </div>
+        {/* <Dialog>
           <DialogTrigger asChild>
             <Button size="sm" className="relative">
               Add Podcast
@@ -53,7 +97,7 @@ export function PodcastEmptyPlaceholder() {
               <Button>Import Podcast</Button>
             </DialogFooter>
           </DialogContent>
-        </Dialog>
+        </Dialog> */}
       </div>
     </div>
   );

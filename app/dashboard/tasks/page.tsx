@@ -1,13 +1,17 @@
+'use client';
+
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { promise, z } from 'zod';
-
 import { columns } from './components/columns';
 import { DataTable } from './components/data-table';
 import { UserNav } from './components/user-nav';
 import { taskSchema } from './data/schema';
+import { useEffect } from 'react';
+import { convertListToObjectData } from '@/lib/file/csv';
+import data from './data.json';
 
 type Transaction = {
   transactionID: string;
@@ -33,10 +37,10 @@ function transformTransaction(data: any[]): Transaction[] {
   }));
 }
 
-export const metadata: Metadata = {
-  title: 'Tasks',
-  description: 'A task and issue tracker build using Tanstack Table.',
-};
+// export const metadata: Metadata = {
+//   title: 'Tasks',
+//   description: 'A task and issue tracker build using Tanstack Table.',
+// };
 
 // Simulate a database read for tasks.
 async function getTasks() {
@@ -44,8 +48,13 @@ async function getTasks() {
   return z.array(taskSchema).parse(tasks);
 }
 
-export default async function TaskPage() {
-  const tasks = await Promise.resolve([]);
+export default function TaskPage() {
+  useEffect(() => {
+    const objData = convertListToObjectData(data.data);
+    console.log('objData', objData);
+    return () => {};
+  }, []);
+
   return (
     <>
       <div className="md:hidden">
@@ -74,7 +83,7 @@ export default async function TaskPage() {
             <UserNav />
           </div>
         </div>
-        <DataTable data={tasks} columns={columns} />
+        {/* <DataTable data={tasks} columns={columns} /> */}
       </div>
     </>
   );
