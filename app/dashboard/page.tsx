@@ -12,8 +12,9 @@ import { Overview } from './components/overview';
 import { MainNav } from './components/main-nav';
 import { CalendarDateRangePicker } from './components/date-range-picker';
 import { Separator } from '@radix-ui/react-select';
-import { PodcastEmptyPlaceholder } from './components/podcast-empty-placeholder';
+import { WeChatUploadComponent } from './components/weChat-upload-component';
 import TaskPage from './tasks/page';
+import { PodcastEmptyPlaceholder } from './components/podcast-empty-placeholder';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -63,6 +64,7 @@ export default function DashboardPage() {
             <TabsList>
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="analytics">导入</TabsTrigger>
+              <TabsTrigger value="weChat">导入微信</TabsTrigger>
               <TabsTrigger value="reports">预览数据</TabsTrigger>
               <TabsTrigger value="notifications" disabled>
                 Notifications
@@ -187,6 +189,16 @@ export default function DashboardPage() {
               </div>
               <Separator className="my-4" />
               <PodcastEmptyPlaceholder />
+            </TabsContent>
+            <TabsContent value="weChat" className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <h2 className="text-2xl font-semibold tracking-tight">New Episodes</h2>
+                  <p className="text-sm text-muted-foreground ">Your favorite podcasts. Updated daily.</p>
+                </div>
+              </div>
+              <Separator className="my-4" />
+              <WeChatUploadComponent />
             </TabsContent>
             <TabsContent value="reports" className="space-y-4">
               <TaskPage />

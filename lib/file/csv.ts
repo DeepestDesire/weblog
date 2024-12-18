@@ -1,4 +1,5 @@
 import Papa from 'papaparse';
+import pdf2json from 'pdf2json';
 
 export const parseCSVFile = async (file: File) => {
   return await new Promise(async (resolve, reject) => {
@@ -11,6 +12,25 @@ export const parseCSVFile = async (file: File) => {
       },
     });
   });
+};
+
+// 设置 workerSrc
+
+export const parsePDFTable = async (file: File) => {
+  // return new Promise((resolve, reject) => {
+  //   const pdfParser = new pdf2json();
+  //   pdfParser.on('pdfParser_dataError', (errData) => reject(errData.parserError));
+  //   pdfParser.on('pdfParser_dataReady', (pdfData) => {
+  //     const tableData = extractTableData(pdfData);
+  //     resolve(tableData);
+  //   });
+  //   pdfParser.loadPDF(file.path);
+  // });
+};
+
+const extractTableData = (pdfData) => {
+  console.log('first', pdfData);
+  return [];
 };
 
 const downloadFile = async (url, name) => {
