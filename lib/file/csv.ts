@@ -1,5 +1,4 @@
 import Papa from 'papaparse';
-import pdf2json from 'pdf2json';
 
 export const parseCSVFile = async (file: File) => {
   return await new Promise(async (resolve, reject) => {
