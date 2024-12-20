@@ -11,31 +11,7 @@ import { UserNav } from './components/user-nav';
 import { taskSchema } from './data/schema';
 import { useEffect } from 'react';
 import { convertListToObjectData } from '@/lib/file/csv';
-import data from './data.json';
-
-type Transaction = {
-  transactionID: string;
-  transactionTime: string;
-  transactionType: string;
-  debitCreditOther: string;
-  paymentMethod: string;
-  amountCNY: number;
-  counterParty: string;
-  merchantOrderID: string;
-};
-
-function transformTransaction(data: any[]): Transaction[] {
-  return data.map((item) => ({
-    transactionID: item['交易单号'],
-    transactionTime: item['交易时间'],
-    transactionType: item['交易类型'].replace(/\n/g, ''),
-    debitCreditOther: item['收/支/其他'],
-    paymentMethod: item['交易方式'].replace(/\n/g, ''),
-    amountCNY: item['金额(元)'],
-    counterParty: item['交易对方'] ? item['交易对方'].replace(/\n/g, '') : '',
-    merchantOrderID: item['商户单号'],
-  }));
-}
+import { useAppSelector } from '@/lib/store/hooks';
 
 // export const metadata: Metadata = {
 //   title: 'Tasks',
@@ -43,17 +19,20 @@ function transformTransaction(data: any[]): Transaction[] {
 // };
 
 // Simulate a database read for tasks.
-async function getTasks() {
-  const tasks = transformTransaction([]);
-  return z.array(taskSchema).parse(tasks);
-}
+// async function getTasks() {
+//   const tasks = transformTransaction([]);
+//   return z.array(taskSchema).parse(tasks);
+// }
 
 export default function TaskPage() {
+  const data = useAppSelector((state) => state.weChatBill.data);
+
   useEffect(() => {
-    // const objData = convertListToObjectData(data.data);
-    // console.log('objData', objData);
+    console.log('weChatBill');
     return () => {};
   }, []);
+
+  console.log('data', data);
 
   return (
     <>
@@ -67,7 +46,7 @@ export default function TaskPage() {
             <UserNav />
           </div>
         </div>
-        {/* <DataTable data={tasks} columns={columns} /> */}
+        <DataTable data={data} columns={columns} />
       </div>
     </>
   );

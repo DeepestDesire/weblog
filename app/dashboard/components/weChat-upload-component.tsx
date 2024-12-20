@@ -16,10 +16,12 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { parseCSVFile, parsePDFTable } from '@/lib/file/csv';
+import { useAppDispatch } from '@/lib/store/hooks';
+import { setData } from '@/lib/store/weChat/bill';
 
 export function WeChatUploadComponent() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-
+  const dispatch = useAppDispatch();
   const handleFileChange = () => {
     'use client';
     const file = fileInputRef.current?.files?.[0];
@@ -35,6 +37,7 @@ export function WeChatUploadComponent() {
             },
           })
           .then((res) => {
+            dispatch(setData(res.data));
             console.log('result', res.data);
           });
       } catch (error) {

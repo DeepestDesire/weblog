@@ -33,6 +33,20 @@ export const columns: ColumnDef<Task>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: 'transactionID',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="交易单号" />,
+    cell: ({ row }) => <div className="">{row.getValue('transactionID')}</div>,
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    accessorKey: 'transactionTime',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="交易时间" />,
+    cell: ({ row }) => <div className="">{row.getValue('transactionTime')}</div>,
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
     accessorKey: 'counterParty',
     header: ({ column }) => <DataTableColumnHeader column={column} title="交易商户" />,
     cell: ({ row }) => <div className="">{row.getValue('counterParty')}</div>,
@@ -64,7 +78,7 @@ export const columns: ColumnDef<Task>[] = [
     },
   },
   {
-    accessorKey: 'debitCreditOther',
+    accessorKey: 'inOrOut',
     header: ({ column }) => <DataTableColumnHeader column={column} title="收/支/其他" />,
     cell: ({ row }) => {
       // const status = statuses.find((status) => status.label);
@@ -76,7 +90,7 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex w-[100px] items-center">
           {/* {status.icon && <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />} */}
-          <span>{row.getValue('debitCreditOther')}</span>
+          <span>{row.getValue('inOrOut')}</span>
         </div>
       );
     },

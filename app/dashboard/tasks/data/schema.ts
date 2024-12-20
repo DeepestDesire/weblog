@@ -6,9 +6,9 @@ export const taskSchema = z.object({
   transactionID: z.string(),
   transactionTime: z.string(),
   transactionType: z.string(),
-  debitCreditOther: z.string(),
+  inOrOut: z.string(),
   paymentMethod: z.string(),
-  amountCNY: z.number(),
+  amountCNY: z.string(),
   counterParty: z.string(),
   merchantOrderID: z.string(),
 });

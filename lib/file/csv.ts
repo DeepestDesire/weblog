@@ -57,7 +57,7 @@ type Transaction = {
   transactionID: string;
   transactionTime: string;
   transactionType: string;
-  debitCreditOther: string;
+  inOrOut: string;
   paymentMethod: string;
   amountCNY: number;
   counterParty: string;

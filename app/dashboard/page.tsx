@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,6 +14,7 @@ import { Separator } from '@radix-ui/react-select';
 import { WeChatUploadComponent } from './components/weChat-upload-component';
 import TaskPage from './tasks/page';
 import { PodcastEmptyPlaceholder } from './components/podcast-empty-placeholder';
+import StoreProvider from '../StoreProvider';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -23,23 +23,7 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <>
-      <div className="md:hidden">
-        <Image
-          src="/examples/dashboard-light.png"
-          width={1280}
-          height={866}
-          alt="Dashboard"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/dashboard-dark.png"
-          width={1280}
-          height={866}
-          alt="Dashboard"
-          className="hidden dark:block"
-        />
-      </div>
+    <StoreProvider>
       <div className="hidden flex-col md:flex">
         <div className="border-b">
           <div className="flex h-16 items-center px-4">
@@ -206,6 +190,6 @@ export default function DashboardPage() {
           </Tabs>
         </div>
       </div>
-    </>
+    </StoreProvider>
   );
 }
