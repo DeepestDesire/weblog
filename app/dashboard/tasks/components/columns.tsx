@@ -35,21 +35,21 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'transactionID',
     header: ({ column }) => <DataTableColumnHeader column={column} title="交易单号" />,
-    cell: ({ row }) => <div className="">{row.getValue('transactionID')}</div>,
+    cell: ({ row }) => <div className="max-w-[200] truncate">{row.getValue('transactionID')}</div>,
     enableSorting: false,
     enableHiding: false,
   },
   {
     accessorKey: 'transactionTime',
     header: ({ column }) => <DataTableColumnHeader column={column} title="交易时间" />,
-    cell: ({ row }) => <div className="">{row.getValue('transactionTime')}</div>,
+    cell: ({ row }) => <div className="max-w-[150]  truncate">{row.getValue('transactionTime')}</div>,
     enableSorting: false,
     enableHiding: false,
   },
   {
     accessorKey: 'counterParty',
     header: ({ column }) => <DataTableColumnHeader column={column} title="交易商户" />,
-    cell: ({ row }) => <div className="">{row.getValue('counterParty')}</div>,
+    cell: ({ row }) => <div className="max-w-[100] truncate">{row.getValue('counterParty')}</div>,
     enableSorting: false,
     enableHiding: false,
   },
@@ -59,7 +59,7 @@ export const columns: ColumnDef<Task>[] = [
     cell: ({ row }) => {
       const label = labels.find((label) => label.value === row.original.amountCNY.toString());
       return (
-        <div className="flex space-x-2">
+        <div className="flex space-x-2  w-[60px]">
           {label && <Badge variant="outline">{label.label}</Badge>}
           <span className="max-w-[500px] truncate font-medium">{row.getValue('amountCNY')}</span>
         </div>
@@ -71,7 +71,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => <DataTableColumnHeader column={column} title="交易类型" />,
     cell: ({ row }) => {
       return (
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 w-[60px]">
           <span className="max-w-[500px] truncate font-medium">{row.getValue('transactionType')}</span>
         </div>
       );

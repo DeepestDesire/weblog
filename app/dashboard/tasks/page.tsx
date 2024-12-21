@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { convertListToObjectData } from '@/lib/file/csv';
 import { useAppSelector } from '@/lib/store/hooks';
 
+import data from './weChat.json';
 // export const metadata: Metadata = {
 //   title: 'Tasks',
 //   description: 'A task and issue tracker build using Tanstack Table.',
@@ -25,7 +26,7 @@ import { useAppSelector } from '@/lib/store/hooks';
 // }
 
 export default function TaskPage() {
-  const data = useAppSelector((state) => state.weChatBill.data);
+  // const data = useAppSelector((state) => state.weChatBill.data);
 
   useEffect(() => {
     console.log('weChatBill');
