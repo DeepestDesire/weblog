@@ -55,13 +55,61 @@ const data = [
   },
 ];
 
+import data2 from '../tasks/weChat.json';
+import { useEffect, useState } from 'react';
+import {
+  getDataForSpecifyMonth,
+  getMonthlyConsumption,
+  getTop5Consumption,
+  getTotalConsumption,
+  SourceDataType,
+} from './utils';
+
 export function Overview() {
+  const [totalConsumption, setTotalConsumption] = useState('');
+
+  const [monthConsumption, setMonthConsumption] = useState<{ name: number; total: number }[]>([]);
+
+  useEffect(() => {
+    const month = getMonthlyConsumption(data2);
+
+    const chartData = month.map((consumption, index) => {
+      return {
+        name: index + 1,
+        total: consumption,
+      };
+    });
+
+    setMonthConsumption(chartData);
+  }, []);
+
+  useEffect(() => {
+    const total: number = getTotalConsumption(data2);
+    setTotalConsumption(total.toFixed(2));
+  }, []);
+
+  const [top5List, setTop5List] = useState<SourceDataType>([]);
+  // 从12个月中挑选中3个消费最多的月份，以及消费总额
+  useEffect(() => {
+    const month = getMonthlyConsumption(data2);
+
+    const list = month
+      .map((item, index) => [item, index])
+      .sort((a, b) => b[0] - a[0])
+      .slice(0, 3);
+  }, []);
+
+  useEffect(() => {
+    const top5 = getTop5Consumption(data2);
+    setTop5List(top5);
+  }, []);
+
   return (
     <>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
+            <CardTitle className="text-sm font-medium">总共消费</CardTitle>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -76,7 +124,7 @@ export function Overview() {
             </svg>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$45,231.89</div>
+            <div className="text-2xl font-bold">￥{totalConsumption}</div>
             <p className="text-xs text-muted-foreground">+20.1% from last month</p>
           </CardContent>
         </Card>
@@ -154,14 +202,21 @@ export function Overview() {
           </CardHeader>
           <CardContent className="pl-2">
             <ResponsiveContainer width="100%" height={350}>
-              <BarChart data={data}>
-                <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+              <BarChart data={monthConsumption}>
+                <XAxis
+                  dataKey="name"
+                  stroke="#888888"
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                  tickFormatter={(value) => `${value}月`}
+                />
                 <YAxis
                   stroke="#888888"
                   fontSize={12}
                   tickLine={false}
                   axisLine={false}
-                  tickFormatter={(value) => `$${value}`}
+                  tickFormatter={(value) => `￥${value}`}
                 />
                 <Bar dataKey="total" fill="currentColor" radius={[4, 4, 0, 0]} className="fill-primary" />
               </BarChart>
@@ -174,7 +229,7 @@ export function Overview() {
             <CardDescription>You made 265 sales this month.</CardDescription>
           </CardHeader>
           <CardContent>
-            <RecentSales />
+            <RecentSales data={top5List} />
           </CardContent>
         </Card>
       </div>

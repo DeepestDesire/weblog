@@ -44,9 +44,9 @@ export default function DashboardPage() {
               <Button>Download</Button>
             </div>
           </div>
-          <Tabs defaultValue="reports" className="space-y-4">
+          <Tabs defaultValue="overview" className="space-y-4">
             <TabsList>
-              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="overview">总览</TabsTrigger>
               <TabsTrigger value="analytics">导入</TabsTrigger>
               <TabsTrigger value="weChat">导入微信</TabsTrigger>
               <TabsTrigger value="reports">预览数据</TabsTrigger>
