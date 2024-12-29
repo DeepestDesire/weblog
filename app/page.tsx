@@ -1,7 +1,11 @@
+import { redirect } from 'next/navigation';
 import { PostList } from '../components/Post/PostList';
 import DatabaseDashboard from '../components/DatabaseDashboard';
 
 export default async function Page() {
+  redirect('/dashboard');
+
+  // 下面的代码不会执行，因为 redirect 会中断执行
   return (
     <main>
       <div className="bg-primary overflow-hidden px-4">
